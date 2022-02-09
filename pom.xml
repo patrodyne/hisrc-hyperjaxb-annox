@@ -34,7 +34,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.patrodyne.jvnet</groupId>
-	<artifactId>jaxb2-annotate-plugin-project</artifactId>
+	<artifactId>hisrc-hyperjaxb-annox-plugin-project</artifactId>
 	<version>1.1.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>JAXB2 Annotate Plugin Project</name>
@@ -90,11 +90,11 @@
 	</distributionManagement>
 	<properties>
 		<activation.version>1.2.0</activation.version>
-		<annox.version>1.0.3-SNAPSHOT</annox.version>
+		<hisrc-basicjaxb-annox-parser.version>1.0.3-SNAPSHOT</hisrc-basicjaxb-annox-parser.version>
+		<hisrc-basicjaxb.version>0.12.1-SNAPSHOT</hisrc-basicjaxb.version>
+		<hisrc-higherjaxb-maven-plugin.version>0.14.1-SNAPSHOT</hisrc-higherjaxb-maven-plugin.version>
 		<jaxb.version>2.3.1</jaxb.version>
-		<jaxb2-basics.version>0.12.1-SNAPSHOT</jaxb2-basics.version>
 		<junit.version>4.13.2</junit.version>
-		<maven-jaxb2-plugin.version>0.14.1-SNAPSHOT</maven-jaxb2-plugin.version>
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -104,51 +104,51 @@
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
-				<artifactId>jaxb2-basics-ant</artifactId>
-				<version>${jaxb2-basics.version}</version>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-basicjaxb-ant</artifactId>
+				<version>${hisrc-basicjaxb.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
-				<artifactId>jaxb2-basics-runtime</artifactId>
-				<version>${jaxb2-basics.version}</version>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-basicjaxb-runtime</artifactId>
+				<version>${hisrc-basicjaxb.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
-				<artifactId>jaxb2-basics-tools</artifactId>
-				<version>${jaxb2-basics.version}</version>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-basicjaxb-tools</artifactId>
+				<version>${hisrc-basicjaxb.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
-				<artifactId>jaxb2-basics-testing</artifactId>
-				<version>${jaxb2-basics.version}</version>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-basicjaxb-testing</artifactId>
+				<version>${hisrc-basicjaxb.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
-				<artifactId>jaxb2-basics</artifactId>
-				<version>${jaxb2-basics.version}</version>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-basicjaxb</artifactId>
+				<version>${hisrc-basicjaxb.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2_commons</groupId>
-				<artifactId>jaxb2-basics-annotate</artifactId>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-hyperjaxb-annox-plugin</artifactId>
 				<version>${project.version}</version>
 			</dependency>
 			<!-- Maven JAXB2 Plugin -->
 			<dependency>
-				<groupId>org.jvnet.jaxb2.maven2</groupId>
-				<artifactId>maven-jaxb2-plugin</artifactId>
-				<version>${maven-jaxb2-plugin.version}</version>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-higherjaxb2-maven-plugin</artifactId>
+				<version>${hisrc-higherjaxb-maven-plugin.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jvnet.jaxb2.maven2</groupId>
-				<artifactId>maven-jaxb2-plugin-testing</artifactId>
-				<version>${maven-jaxb2-plugin.version}</version>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-higherjaxb-maven-plugin-testing</artifactId>
+				<version>${hisrc-higherjaxb-maven-plugin.version}</version>
 			</dependency>
 			<!-- Annox -->
 			<dependency>
-				<groupId>org.jvnet.annox</groupId>
-				<artifactId>annox</artifactId>
-				<version>${annox.version}</version>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-basicjaxb-annox-parser</artifactId>
+				<version>${hisrc-basicjaxb-annox-parser.version}</version>
 			</dependency>
 			<!-- JAXB -->
 			<dependency>
@@ -279,9 +279,9 @@
 					<version>3.0.1</version>
 				</plugin>
 				<plugin>
-					<groupId>org.jvnet.jaxb2.maven2</groupId>
-					<artifactId>maven-jaxb2-plugin</artifactId>
-					<version>${maven-jaxb2-plugin.version}</version>
+					<groupId>org.patrodyne.jvnet</groupId>
+					<artifactId>hisrc-higherjaxb2-maven-plugin</artifactId>
+					<version>${hisrc-higherjaxb-maven-plugin.version}</version>
 					<executions>
 						<execution>
 							<id>generate</id>
