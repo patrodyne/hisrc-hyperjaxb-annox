@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <!--
 
     Copyright © 2005-2015, Alexey Valikov
@@ -32,16 +33,15 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>org.jvnet.jaxb2_commons</groupId>
-	<artifactId>jaxb2-annotate-plugin-samples</artifactId>
-	<packaging>pom</packaging>
-	<name>JAXB2 Annotate Plugin - Samples</name>
 	<parent>
 		<groupId>org.jvnet.jaxb2_commons</groupId>
 		<artifactId>jaxb2-annotate-plugin-project</artifactId>
 		<version>1.1.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
+	<artifactId>jaxb2-annotate-plugin-samples</artifactId>
+	<packaging>pom</packaging>
+	<name>JAXB2 Annotate Plugin - Samples</name>
 	<modules>
 		<module>annotate</module>
 	</modules>
@@ -139,13 +139,13 @@
 						<configuration>
 							<debug>true</debug>
 							<projectsDirectory>${basedir}/target/test-maven-assembly</projectsDirectory>
+							<cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
 							<!--localRepositoryPath>${basedir}/target/test-maven-repository</localRepositoryPath-->
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
 			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
 				<configuration>
 					<skip>true</skip>
