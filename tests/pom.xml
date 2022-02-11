@@ -34,7 +34,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.patrodyne.jvnet</groupId>
-	<artifactId>hisrc-hyperjaxb-annox-tests</artifactId>
+	<artifactId>hisrc-hyperjaxb-annox-plugin-tests</artifactId>
 	<packaging>pom</packaging>
 	<name>JAXB2 Annotate Plugin - Tests</name>
 	<parent>
@@ -67,7 +67,7 @@
 			<plugins>
 				<plugin>
 					<groupId>org.patrodyne.jvnet</groupId>
-					<artifactId>hisrc-higherjaxb2-maven-plugin</artifactId>
+					<artifactId>hisrc-higherjaxb-maven-plugin</artifactId>
 					<executions>
 						<execution>
 							<id>generate</id>

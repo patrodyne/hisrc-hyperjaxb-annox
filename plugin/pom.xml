@@ -72,7 +72,6 @@
 		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>
 			<artifactId>jaxb-xjc</artifactId>
-			<scope>provided</scope>
 		</dependency>
 		<!-- Annox -->
 		<dependency>

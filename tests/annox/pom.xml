@@ -35,7 +35,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.patrodyne.jvnet</groupId>
-		<artifactId>hisrc-hyperjaxb-annox-tests</artifactId>
+		<artifactId>hisrc-hyperjaxb-annox-plugin-tests</artifactId>
 		<version>1.1.1-SNAPSHOT</version>
 		<relativePath>../pom.xml</relativePath>
 	</parent>
@@ -49,7 +49,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.patrodyne.jvnet</groupId>
-			<artifactId>hisrc-hyperjaxb-annox-test-annotations</artifactId>
+			<artifactId>hisrc-hyperjaxb-annox-plugin-test-annotations</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 	</dependencies>
@@ -58,7 +58,7 @@
 		<plugins>
 			<plugin>
 				<groupId>org.patrodyne.jvnet</groupId>
-				<artifactId>hisrc-higherjaxb2-maven-plugin</artifactId>
+				<artifactId>hisrc-higherjaxb-maven-plugin</artifactId>
 				<configuration>
 					<extension>true</extension>
 					<args>
@@ -71,7 +71,7 @@
 						</plugin>
 						<plugin>
 							<groupId>org.patrodyne.jvnet</groupId>
-							<artifactId>hisrc-hyperjaxb-annox-test-annotations</artifactId>
+							<artifactId>hisrc-hyperjaxb-annox-plugin-test-annotations</artifactId>
 						</plugin>
 					</plugins>
 				</configuration>
