@@ -90,8 +90,8 @@
 	</distributionManagement>
 	<properties>
 		<activation.version>1.2.0</activation.version>
-		<hisrc-basicjaxb-annox-parser.version>1.0.3-SNAPSHOT</hisrc-basicjaxb-annox-parser.version>
-		<hisrc-basicjaxb.version>0.12.1-SNAPSHOT</hisrc-basicjaxb.version>
+		<hisrc-basicjaxb-annox-parser.version>1.0.3</hisrc-basicjaxb-annox-parser.version>
+		<hisrc-basicjaxb.version>0.12.1</hisrc-basicjaxb.version>
 		<hisrc-higherjaxb-maven-plugin.version>0.14.1-SNAPSHOT</hisrc-higherjaxb-maven-plugin.version>
 		<jaxb.version>2.3.1</jaxb.version>
 		<junit.version>4.13.2</junit.version>
