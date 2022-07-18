@@ -117,7 +117,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin {
 
 	@Override
 	public String getUsage() {
-		return "TBD";
+		return "Add or remove arbitrary annotations to/from generated sources.";
 	}
 
 	private String defaultFieldTarget = "getter";
