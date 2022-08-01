@@ -40,7 +40,7 @@
 	</parent>
 	<artifactId>hisrc-hyperjaxb-annox-plugin-test-one</artifactId>
 	<packaging>jar</packaging>
-	<name>JAXB2 Annotate Plugin - Test [one]</name>
+	<name>HiSrc HyperJAXB Annox Plugin - Test [one]</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.patrodyne.jvnet</groupId>

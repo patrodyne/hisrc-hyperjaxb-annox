@@ -41,7 +41,7 @@
 	</parent>
 	<artifactId>hisrc-hyperjaxb-annox-plugin-sample-annotate</artifactId>
 	<packaging>pom</packaging>
-	<name>JAXB2 Annotate Plugin - Sample [annotate]</name>
+	<name>HiSrc HyperJAXB Annox Plugin - Sample [annotate]</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>

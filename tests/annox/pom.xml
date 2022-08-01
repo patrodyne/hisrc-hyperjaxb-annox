@@ -41,7 +41,7 @@
 	</parent>
 	<artifactId>hisrc-hyperjaxb-annox-plugin-test-annox</artifactId>
 	<packaging>jar</packaging>
-	<name>JAXB2 Annotate Plugin - Test [annox]</name>
+	<name>HiSrc HyperJAXB Annox Plugin - Test [annox]</name>
 	<dependencies>
 		<dependency>
 			<groupId>javax.xml.bind</groupId>

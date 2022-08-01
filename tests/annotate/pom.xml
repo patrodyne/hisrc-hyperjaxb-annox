@@ -41,7 +41,7 @@
 	</parent>
 	<artifactId>hisrc-hyperjaxb-annox-plugin-test-annotate</artifactId>
 	<packaging>jar</packaging>
-	<name>JAXB2 Annotate Plugin - Test [annotate]</name>
+	<name>HiSrc HyperJAXB Annox Plugin - Test [annotate]</name>
 	<dependencies>
 		<dependency>
 			<groupId>org.patrodyne.jvnet</groupId>

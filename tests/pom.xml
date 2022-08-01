@@ -36,7 +36,7 @@
 	<groupId>org.patrodyne.jvnet</groupId>
 	<artifactId>hisrc-hyperjaxb-annox-plugin-tests</artifactId>
 	<packaging>pom</packaging>
-	<name>JAXB2 Annotate Plugin - Tests</name>
+	<name>HiSrc HyperJAXB Annox Plugin - Tests</name>
 	<parent>
 		<groupId>org.patrodyne.jvnet</groupId>
 		<artifactId>hisrc-hyperjaxb-annox-plugin-project</artifactId>

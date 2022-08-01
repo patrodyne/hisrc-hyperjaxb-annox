@@ -41,7 +41,7 @@
 	</parent>
 	<artifactId>hisrc-hyperjaxb-annox-plugin-test-issues</artifactId>
 	<packaging>jar</packaging>
-	<name>JAXB2 Annotate Plugin - Test [issues]</name>
+	<name>HiSrc HyperJAXB Annox Plugin - Test [issues]</name>
 	<properties>
 		<jaxb2-annotate-plugin-test-annox-annotations.version>1.0.0</jaxb2-annotate-plugin-test-annox-annotations.version>
 	</properties>
