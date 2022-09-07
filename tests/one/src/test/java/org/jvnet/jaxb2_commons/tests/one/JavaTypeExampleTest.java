@@ -1,5 +1,7 @@
 package org.jvnet.jaxb2_commons.tests.one;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.io.StringWriter;
 
 import jakarta.xml.bind.JAXBContext;
@@ -7,8 +9,7 @@ import jakarta.xml.bind.JAXBElement;
 import jakarta.xml.bind.JAXBException;
 import javax.xml.namespace.QName;
 
-import org.junit.Assert;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 public class JavaTypeExampleTest {
 
@@ -23,7 +24,7 @@ public class JavaTypeExampleTest {
 		context.createMarshaller().marshal(
 				new JAXBElement<JavaTypeExample>(new QName("test"),
 						JavaTypeExample.class, value), sw);
-		Assert.assertTrue(sw.toString().contains(">true<"));
+		assertTrue(sw.toString().contains(">true<"));
 //		System.out.println(sw.toString());
 	}
 }

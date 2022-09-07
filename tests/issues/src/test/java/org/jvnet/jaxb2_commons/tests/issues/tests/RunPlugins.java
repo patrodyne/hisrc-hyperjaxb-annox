@@ -2,8 +2,8 @@ package org.jvnet.jaxb2_commons.tests.issues.tests;
 
 import java.io.File;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.sun.codemodel.JCodeModel;
 import com.sun.tools.xjc.ConsoleErrorReporter;
@@ -13,7 +13,7 @@ import com.sun.tools.xjc.model.Model;
 
 public class RunPlugins {
 
-	@Before
+	@BeforeEach
 	public void setUp() {
 		System.setProperty("javax.xml.accessExternalSchema", "all");
 	}

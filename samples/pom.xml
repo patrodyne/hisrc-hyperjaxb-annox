@@ -12,11 +12,14 @@
 	<artifactId>hisrc-hyperjaxb-annox-plugin-samples</artifactId>
 	<packaging>pom</packaging>
 	<name>HiSrc HyperJAXB Annox Plugin - Samples</name>
+	<properties>
+		<ant-atleast.version>1.10.4</ant-atleast.version>
+	</properties>
 	<modules>
 		<module>annotate</module>
 	</modules>
 	<build>
-		<defaultGoal>install</defaultGoal>
+		<defaultGoal>package</defaultGoal>
 		<plugins>
 			<plugin>
 				<artifactId>maven-assembly-plugin</artifactId>
