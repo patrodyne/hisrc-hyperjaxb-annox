@@ -12,6 +12,9 @@
 	<artifactId>hisrc-hyperjaxb-annox-plugin-test-annox</artifactId>
 	<packaging>jar</packaging>
 	<name>HiSrc HyperJAXB Annox Plugin - Test [annox]</name>
+	<properties>
+		<root.basedir>${basedir}/../..</root.basedir>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>jakarta.xml.bind</groupId>

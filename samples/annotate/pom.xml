@@ -12,6 +12,9 @@
 	<artifactId>hisrc-hyperjaxb-annox-plugin-sample-annotate</artifactId>
 	<packaging>pom</packaging>
 	<name>HiSrc HyperJAXB Annox Plugin - Sample [annotate]</name>
+	<properties>
+		<root.basedir>${basedir}/../..</root.basedir>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.glassfish.jaxb</groupId>

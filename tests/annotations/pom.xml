@@ -12,4 +12,7 @@
 	<artifactId>hisrc-hyperjaxb-annox-plugin-test-annotations</artifactId>
 	<packaging>jar</packaging>
 	<name>HiSrc HyperJAXB Annox Plugin - Test [annotations]</name>
+	<properties>
+		<root.basedir>${basedir}/../..</root.basedir>
+	</properties>
 </project>

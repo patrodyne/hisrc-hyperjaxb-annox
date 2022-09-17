@@ -11,6 +11,9 @@
 	<artifactId>hisrc-hyperjaxb-annox-plugin-test-one</artifactId>
 	<packaging>jar</packaging>
 	<name>HiSrc HyperJAXB Annox Plugin - Test [one]</name>
+	<properties>
+		<root.basedir>${basedir}/../..</root.basedir>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.patrodyne.jvnet</groupId>

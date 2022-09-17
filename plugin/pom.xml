@@ -10,6 +10,9 @@
 	<artifactId>hisrc-hyperjaxb-annox-plugin</artifactId>
 	<packaging>jar</packaging>
 	<name>HiSrc HyperJAXB Annox Plugin</name>
+	<properties>
+		<root.basedir>${basedir}/..</root.basedir>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.slf4j</groupId>
