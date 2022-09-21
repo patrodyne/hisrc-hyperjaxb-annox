@@ -325,6 +325,7 @@
 				<artifactId>maven-antrun-plugin</artifactId>
 				<executions>
 					<execution>
+						<?m2e ignore?>
 						<phase>validate</phase>
 						<goals>
 							<goal>run</goal>
