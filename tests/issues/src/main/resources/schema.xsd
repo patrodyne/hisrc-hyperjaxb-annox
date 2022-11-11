@@ -11,7 +11,7 @@
 				localScoping="toplevel"
 				fixedAttributeAsConstantProperty="true"/>
 			<jaxb:schemaBindings>
-				<jaxb:package name="org.jvnet.jaxb2_commons.tests.issues" />
+				<jaxb:package name="org.jvnet.hyperjaxb_annox.tests.issues" />
 			</jaxb:schemaBindings>
 		</xs:appinfo>
 	</xs:annotation>

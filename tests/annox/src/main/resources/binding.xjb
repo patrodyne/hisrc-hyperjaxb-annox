@@ -2,7 +2,7 @@
 <jaxb:bindings jaxb:version="3.0"
 	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
 	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-	xmlns:annox="http://annox.dev.java.net" 
+	xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox" 
 	jaxb:extensionBindingPrefixes="annox"
 >
 
@@ -11,7 +11,7 @@
 	<jaxb:bindings schemaLocation="schema.xsd" node="/xsd:schema">
 		<jaxb:bindings node="xsd:complexType[@name='zero']/xsd:sequence/xsd:element[@name='b']">
 			<annox:annotate>
-				<annox:annotate annox:class="org.jvnet.jaxb2_commons.plugin.annotate.tests.annotations.Alpha" longField="-1" enumField="SIX" stringField="seven">
+				<annox:annotate annox:class="org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Alpha" longField="-1" enumField="SIX" stringField="seven">
 					<annox:annotate annox:field="intField">0</annox:annotate>
 					<annox:annotate annox:field="shortField">3</annox:annotate>
 				</annox:annotate>

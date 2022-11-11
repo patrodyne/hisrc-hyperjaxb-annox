@@ -1,2 +1,2 @@
-org.jvnet.jaxb2_commons.plugin.annotate.AnnotatePlugin
-org.jvnet.jaxb2_commons.plugin.removeannotation.RemoveAnnotationPlugin
+org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin
+org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin

@@ -5,7 +5,7 @@
 	targetNamespace="urn:issues:element:annotatePackage"
 	elementFormDefault="qualified"
 	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
-	xmlns:annox="http://annox.dev.java.net"
+	xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox"
 	jaxb:extensionBindingPrefixes="annox"
 	jaxb:version="3.0"
 >
@@ -13,7 +13,7 @@
 	<xs:annotation>
 		<xs:appinfo>
 			<jaxb:schemaBindings>
-				<jaxb:package name="org.jvnet.jaxb2_commons.tests.issues.element.annotatePackage" />
+				<jaxb:package name="org.jvnet.hyperjaxb_annox.tests.issues.element.annotatePackage" />
 			</jaxb:schemaBindings>
 		</xs:appinfo>
 	</xs:annotation>
@@ -21,7 +21,7 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<jaxb:class/>
-				<annox:annotate target="package">@org.jvnet.jaxb2_commons.plugin.annotate.tests.annotations.Marked("element.annotatePackage")</annox:annotate>
+				<annox:annotate target="package">@org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Marked("element.annotatePackage")</annox:annotate>
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>

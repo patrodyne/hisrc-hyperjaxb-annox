@@ -2,7 +2,7 @@
 <xs:schema
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
-	xmlns:annox="http://annox.dev.java.net"
+	xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox"
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
 	jaxb:extensionBindingPrefixes="annox xjc"
 	jaxb:version="3.0"
@@ -11,10 +11,10 @@
 	<xs:annotation>
 		<xs:appinfo>
 			<jaxb:globalBindings choiceContentProperty="true" generateIsSetMethod="true" generateElementClass="true">
-				<xjc:javaType name="java.lang.Boolean" xmlType="xs:boolean" adapter="org.jvnet.jaxb2_commons.tests.one.CustomBooleanAdapter"/>
+				<xjc:javaType name="java.lang.Boolean" xmlType="xs:boolean" adapter="org.jvnet.hyperjaxb_annox.tests.one.CustomBooleanAdapter"/>
 			</jaxb:globalBindings>
 			<jaxb:schemaBindings>
-				<jaxb:package name="org.jvnet.jaxb2_commons.tests.one"/>
+				<jaxb:package name="org.jvnet.hyperjaxb_annox.tests.one"/>
 			</jaxb:schemaBindings>
 		</xs:appinfo>
 	</xs:annotation>

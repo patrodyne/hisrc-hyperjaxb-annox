@@ -4,7 +4,7 @@
 	xmlns="urn:issues:enum"
 	targetNamespace="urn:issues:enum"
 	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
-	xmlns:annox="http://annox.dev.java.net"
+	xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox"
 	jaxb:extensionBindingPrefixes="annox"
 	jaxb:version="3.0"
 >
@@ -12,7 +12,7 @@
 	<xs:annotation>
 		<xs:appinfo>
 			<jaxb:schemaBindings>
-				<jaxb:package name="org.jvnet.jaxb2_commons.tests.issues._enum" />
+				<jaxb:package name="org.jvnet.hyperjaxb_annox.tests.issues._enum" />
 			</jaxb:schemaBindings>
 		</xs:appinfo>
 	</xs:annotation>
@@ -20,7 +20,7 @@
 	<xs:simpleType name="issueGH1AnnotateType">
 		<xs:annotation>
 			<xs:appinfo>
-				<annox:annotate>@org.jvnet.jaxb2_commons.plugin.annotate.tests.annotations.Marked("annotate")</annox:annotate>
+				<annox:annotate>@org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Marked("annotate")</annox:annotate>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
@@ -32,7 +32,7 @@
 	<xs:simpleType name="issueGH1AnnotateTargetEnumType">
 		<xs:annotation>
 			<xs:appinfo>
-				<annox:annotate target="enum">@org.jvnet.jaxb2_commons.plugin.annotate.tests.annotations.Marked("annotate.target.enum")</annox:annotate>
+				<annox:annotate target="enum">@org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Marked("annotate.target.enum")</annox:annotate>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
@@ -44,7 +44,7 @@
 	<xs:simpleType name="issueGH1AnnotateEnumType">
 		<xs:annotation>
 			<xs:appinfo>
-				<annox:annotateEnum>@org.jvnet.jaxb2_commons.plugin.annotate.tests.annotations.Marked("annotateEnum")</annox:annotateEnum>
+				<annox:annotateEnum>@org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Marked("annotateEnum")</annox:annotateEnum>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:restriction base="xs:string">
@@ -58,7 +58,7 @@
 			<xs:enumeration value="a">
 				<xs:annotation>
 					<xs:appinfo>
-						<annox:annotate target="enum">@org.jvnet.jaxb2_commons.plugin.annotate.tests.annotations.Marked("annotate.target.enum")</annox:annotate>
+						<annox:annotate target="enum">@org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Marked("annotate.target.enum")</annox:annotate>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:enumeration>
@@ -70,7 +70,7 @@
 			<xs:enumeration value="a">
 				<xs:annotation>
 					<xs:appinfo>
-						<annox:annotateEnum>@org.jvnet.jaxb2_commons.plugin.annotate.tests.annotations.Marked("annotateEnum")</annox:annotateEnum>
+						<annox:annotateEnum>@org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Marked("annotateEnum")</annox:annotateEnum>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:enumeration>

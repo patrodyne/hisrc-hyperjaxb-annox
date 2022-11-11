@@ -4,7 +4,7 @@
 	xmlns="urn:issues:enum-constant:annotatePackage"
 	targetNamespace="urn:issues:enum-constant:annotatePackage"
 	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
-	xmlns:annox="http://annox.dev.java.net"
+	xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox"
 	jaxb:extensionBindingPrefixes="annox"
 	jaxb:version="3.0"
 >
@@ -12,7 +12,7 @@
 	<xs:annotation>
 		<xs:appinfo>
 			<jaxb:schemaBindings>
-				<jaxb:package name="org.jvnet.jaxb2_commons.tests.issues.enumConstant.annotatePackage" />
+				<jaxb:package name="org.jvnet.hyperjaxb_annox.tests.issues.enumConstant.annotatePackage" />
 			</jaxb:schemaBindings>
 		</xs:appinfo>
 	</xs:annotation>
@@ -22,7 +22,7 @@
 			<xs:enumeration value="a">
 				<xs:annotation>
 					<xs:appinfo>
-						<annox:annotate target="package">@org.jvnet.jaxb2_commons.plugin.annotate.tests.annotations.Marked("enumConstant.annotatePackage")</annox:annotate>
+						<annox:annotate target="package">@org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Marked("enumConstant.annotatePackage")</annox:annotate>
 					</xs:appinfo>
 				</xs:annotation>
 			</xs:enumeration>

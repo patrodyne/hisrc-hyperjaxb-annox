@@ -40,10 +40,20 @@ with the original `maven-jaxb2-plugin` name.
 
 New goals for the next release are:
 
+* Update version to 2.0.0 due to jakarta and other name changes.
+
+### Status
+
+#### Completed
+
+* Update dependencies with newer versions *including* the Jakarta namespace.
+* Replace 'eclipse-only' lifecyle profile with 'm2e' XML directive.
+* Convert DOS line endings to Unix newlines.
+* Update JUnit v4 to JUnit v5.
 * Rename packages:
     * BasicJAXB Annotations
         * `OLD: org.jvnet.annox`
-        * `NEW: org.jvnet.basicjaxb-annox`
+        * `NEW: org.jvnet.basicjaxb_annox`
     * BasicJAXB XJC Plugin
         * `OLD: org.jvnet.jaxb2_commons`
         * `NEW: org.jvnet.basicjaxb`
@@ -53,6 +63,9 @@ New goals for the next release are:
     * HigherJAXB Maven Mojo
         * `OLD: org.jvnet.jaxb2.maven2`
         * `NEW: org.jvnet.higherjaxb.mojo`
+    * HyperJAXB Annotations
+        * `OLD: org.jvnet.jaxb2_commons`
+        * `NEW: org.jvnet.hyperjaxb_annox`
     * HyperJAXB Persistence
         * `OLD: org.jvnet.hyperjaxb[23]`
         * `NEW: org.jvnet.hyperjaxb`
@@ -66,19 +79,6 @@ New goals for the next release are:
     * HyperJAXB Persistence
         * `OLD: http://hyperjaxb3.jvnet.org/ejb/schemas/customizations`
         * `NEW: http://jvnet.org/hyperjaxb/jpa`
-
-### Status
-
-#### Completed
-
-* Update dependencies with newer versions *including* the Jakarta namespace.
-* Replace 'eclipse-only' lifecyle profile with 'm2e' XML directive.
-* Convert DOS line endings to Unix newlines.
-* Update JUnit v4 to JUnit v5.
-
-#### In Progress
-
-* Rename packages, namespaces and properties.
 
 ### Fork History
 
