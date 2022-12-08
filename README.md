@@ -31,20 +31,34 @@ with the original `maven-jaxb2-plugin` name.
 
 * TBD
 
-#### Maven Central Repository
+#### Maven Repositories
 
-* [Maven Central Repository Search](https://search.maven.org/search?q=g:org.patrodyne.jvnet)
-* [Maven Central Repository Index](https://repo1.maven.org/maven2/org/patrodyne/jvnet/)
+* Search
+	* [MVN Repository](https://mvnrepository.com/artifact/org.patrodyne.jvnet?sort=popular)
+	* [Central Repository](https://search.maven.org/search?q=g:org.patrodyne.jvnet)
+* Index
+	* [Central Repository](https://repo1.maven.org/maven2/org/patrodyne/jvnet/)
 
 ### Goals
 
 New goals for the next release are:
 
-* Update version to 2.0.0 due to jakarta and other name changes.
+* Clean up Java compiler _lint_ warnings.
+* Recheck Dependency Management for newer versions.
 
 ### Status
 
+#### In Progress
+
+* Recheck Dependency Management for newer versions.
+
 #### Completed
+
+* Clean up Java compiler _lint_ warnings.
+
+### Fork History
+
+#### Version 2.0.0
 
 * Update dependencies with newer versions *including* the Jakarta namespace.
 * Replace 'eclipse-only' lifecyle profile with 'm2e' XML directive.
@@ -79,8 +93,7 @@ New goals for the next release are:
     * HyperJAXB Persistence
         * `OLD: http://hyperjaxb3.jvnet.org/ejb/schemas/customizations`
         * `NEW: http://jvnet.org/hyperjaxb/jpa`
-
-### Fork History
+* Update version to 2.0.0 due to jakarta and other name changes.
 
 #### Version 1.1.2
 

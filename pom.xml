@@ -62,9 +62,9 @@
 		<activation-imp.version>1.0.0</activation-imp.version>
 		<ant.version>1.10.12</ant.version>
 		<hibernate.version>6.1.5.Final</hibernate.version>
-		<hisrc-basicjaxb-annox-parser.version>2.0.0</hisrc-basicjaxb-annox-parser.version>
-		<hisrc-basicjaxb.version>2.0.0</hisrc-basicjaxb.version>
-		<hisrc-higherjaxb-maven-plugin.version>2.0.0</hisrc-higherjaxb-maven-plugin.version>
+		<hisrc-basicjaxb-annox-parser.version>2.0.1-SNAPSHOT</hisrc-basicjaxb-annox-parser.version>
+		<hisrc-basicjaxb.version>2.0.1-SNAPSHOT</hisrc-basicjaxb.version>
+		<hisrc-higherjaxb-maven-plugin.version>2.0.1-SNAPSHOT</hisrc-higherjaxb-maven-plugin.version>
 		<jaxb-api.version>3.0.1</jaxb-api.version>
 		<jaxb-imp.version>3.0.2</jaxb-imp.version>
 		<junit-jupiter.version>5.9.0</junit-jupiter.version>

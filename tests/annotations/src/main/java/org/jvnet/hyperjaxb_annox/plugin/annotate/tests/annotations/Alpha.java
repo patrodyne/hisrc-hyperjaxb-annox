@@ -25,8 +25,7 @@ public @interface Alpha {
 
 	String stringField() default "nine";
 
-	@SuppressWarnings("unchecked")
-	Class classField() default String.class;
+	Class<?> classField() default String.class;
 
 	// B annotationField();
 }
