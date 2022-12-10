@@ -61,19 +61,19 @@
 		<activation-api.version>2.1.0</activation-api.version>
 		<activation-imp.version>1.0.0</activation-imp.version>
 		<ant.version>1.10.12</ant.version>
-		<hibernate.version>6.1.5.Final</hibernate.version>
+		<hibernate.version>6.1.7.Final</hibernate.version>
 		<hisrc-basicjaxb-annox-parser.version>2.0.1-SNAPSHOT</hisrc-basicjaxb-annox-parser.version>
 		<hisrc-basicjaxb.version>2.0.1-SNAPSHOT</hisrc-basicjaxb.version>
 		<hisrc-higherjaxb-maven-plugin.version>2.0.1-SNAPSHOT</hisrc-higherjaxb-maven-plugin.version>
 		<jaxb-api.version>3.0.1</jaxb-api.version>
 		<jaxb-imp.version>3.0.2</jaxb-imp.version>
-		<junit-jupiter.version>5.9.0</junit-jupiter.version>
-		<junit-platform.version>1.9.0</junit-platform.version>
+		<junit-jupiter.version>5.9.1</junit-jupiter.version>
+		<junit-platform.version>1.9.1</junit-platform.version>
 		<maven.compiler.source>8</maven.compiler.source>
 		<maven.compiler.target>8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<slf4j.version>1.7.36</slf4j.version>
+		<slf4j.version>2.0.5</slf4j.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
