@@ -16,15 +16,9 @@
 			<directory>src</directory>
 		</fileSet>
 	</fileSets>
-	<dependencySets>
-		<dependencySet>
-			<useProjectArtifact>false</useProjectArtifact>
-			<outputDirectory>lib</outputDirectory>
-		</dependencySet>
-	</dependencySets>
 	<files>
 		<file>
-			<source>${basedir}/../project-ant-build.sh</source>
+			<source>${basedir}/../../project-ant-build.sh</source>
 			<destName>build.sh</destName>
 			<filtered>false</filtered>
 			<fileMode>0774</fileMode>
@@ -35,4 +29,10 @@
 			<filtered>true</filtered>
 		</file>
 	</files>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+			<useProjectArtifact>false</useProjectArtifact>
+		</dependencySet>
+	</dependencySets>
 </assembly>
