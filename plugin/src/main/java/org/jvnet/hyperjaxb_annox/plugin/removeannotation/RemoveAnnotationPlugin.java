@@ -210,7 +210,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin {
 					removeAnnotation(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error applying the annotation.", iaex);
+					getLogger().error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -234,7 +234,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin {
 					removeAnnotation(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error applying the annotation.", iaex);
+					getLogger().error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -260,7 +260,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin {
 					removeAnnotation(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error applying the annotation.", iaex);
+					getLogger().error("Error applying the annotation.", iaex);
 				}
 
 			}
@@ -284,7 +284,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin {
 					removeAnnotation(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error applying the annotation.", iaex);
+					getLogger().error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -311,7 +311,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin {
 					removeAnnotation(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error removing the annotation.", iaex);
+					getLogger().error("Error removing the annotation.", iaex);
 				}
 
 			}

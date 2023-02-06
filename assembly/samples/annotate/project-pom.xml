@@ -136,6 +136,7 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M5</version>
 				<configuration>
+					<argLine>${env.JVM_SYS_ARGS}</argLine>
 					<systemPropertiesFile>\${basedir}/src/test/resources/jvmsystem.properties</systemPropertiesFile>
 				</configuration>
 			</plugin>
@@ -166,7 +167,7 @@
 			</plugin>
 			<plugin>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>3.3.1</version> 
+				<version>3.4.1</version> 
 				<executions>
 					<execution>
 						<id>attach-javadocs</id>
@@ -174,15 +175,22 @@
 						<goals>
 							<goal>jar</goal>
 						</goals>
+						<configuration>
+							<doclint>all,-missing</doclint>
+							<failOnError>false</failOnError>
+						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+			<!-- mvn hisrc-higherjaxb:help -Ddetail=true -->
+			<!-- mvn hisrc-higherjaxb:generate -->
 			<plugin>
 				<groupId>org.patrodyne.jvnet</groupId>
 				<artifactId>hisrc-higherjaxb-maven-plugin</artifactId>
 				<version>\${hisrc-higherjaxb-maven-plugin.version}</version>
 				<executions>
 					<execution>
+						<id>generate</id>
 						<goals>
 							<goal>generate</goal>
 						</goals>

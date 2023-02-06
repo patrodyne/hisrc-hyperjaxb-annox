@@ -231,7 +231,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin {
 					annotate(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error applying the annotation.", iaex);
+					getLogger().error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -255,7 +255,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin {
 					annotate(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error applying the annotation.", iaex);
+					getLogger().error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -281,7 +281,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin {
 					annotate(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error applying the annotation.", iaex);
+					getLogger().error("Error applying the annotation.", iaex);
 				}
 
 			}
@@ -305,7 +305,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin {
 					annotate(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error applying the annotation.", iaex);
+					getLogger().error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -332,7 +332,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin {
 					annotate(codeModel, errorHandler, customization, element,
 							annotatable);
 				} catch (IllegalArgumentException iaex) {
-					logger.error("Error applying the annotation.", iaex);
+					getLogger().error("Error applying the annotation.", iaex);
 				}
 
 			}

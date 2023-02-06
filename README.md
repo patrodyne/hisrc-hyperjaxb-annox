@@ -49,7 +49,7 @@ New goals for the next release are:
 * Include JVM system arguments from 'src/test/resources/jvmsystem.arguments'.
 * Moved 'samples' folder to new 'assembly' folder and restored int. testing.
 * Set log levels for basic strategies in simplelogger.properties.
-* Compile sources and generate classes for Java release v11.
+* Compile sources and generate classes for Java release v11 using JDK 17.
 
 ### Status
 
@@ -61,7 +61,7 @@ New goals for the next release are:
 * Include JVM system arguments from 'src/test/resources/jvmsystem.arguments'.
 * Moved 'samples' folder to new 'assembly' folder and restored int. testing.
 * Set log levels for basic strategies in simplelogger.properties.
-* Compile sources and generate classes for Java release v11.
+* Compile sources and generate classes for Java release v11 using JDK 17.
 
 ### Fork History
 
