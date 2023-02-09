@@ -29,7 +29,7 @@ with the original `maven-jaxb2-plugin` name.
 
 #### GitHub Releases, Demonstrations
 
-* TBD
+* [HiSrc HyperJAXB Annox v2.0.0, Samples][31]
 
 #### Maven Repositories
 
@@ -132,3 +132,4 @@ New goals for the next release are:
   [23]: https://github.com/highsource/maven-jaxb2-plugin#readme
   [24]: https://github.com/highsource/jaxb2-annotate-plugin#readme
   [25]: https://github.com/highsource/hyperjaxb3#readme
+  [31]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.0.0
