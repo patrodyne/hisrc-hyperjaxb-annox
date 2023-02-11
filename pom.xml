@@ -90,8 +90,8 @@
 		<hisrc-basicjaxb-annox-parser.version>2.0.1-SNAPSHOT</hisrc-basicjaxb-annox-parser.version>
 		<hisrc-basicjaxb.version>2.0.1-SNAPSHOT</hisrc-basicjaxb.version>
 		<hisrc-higherjaxb-maven-plugin.version>2.0.1-SNAPSHOT</hisrc-higherjaxb-maven-plugin.version>
-		<jaxb-api.version>3.0.1</jaxb-api.version>
-		<jaxb-imp.version>3.0.2</jaxb-imp.version>
+		<jaxb-api.version>4.0.0</jaxb-api.version>
+		<jaxb-imp.version>4.0.2</jaxb-imp.version>
 		<junit-jupiter.version>5.9.2</junit-jupiter.version>
 		<junit-platform.version>1.9.2</junit-platform.version>
 		<maven.compiler.release>11</maven.compiler.release>
