@@ -25,18 +25,30 @@
 	<modules>
 		<module>samples</module>
 	</modules>
-	<dependencies>
-		<dependency>
-			<groupId>org.patrodyne.jvnet</groupId>
-			<artifactId>hisrc-hyperjaxb-annox-plugin</artifactId>
-			<version>${hisrc-basicjaxb-annox-parser.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>org.patrodyne.jvnet</groupId>
-			<artifactId>hisrc-basicjaxb-ant</artifactId>
-			<version>${hisrc-basicjaxb.version}</version>
-		</dependency>
-	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-basicjaxb-annox-parser</artifactId>
+				<version>${hisrc-basicjaxb-annox-parser.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-hyperjaxb-annox-plugin</artifactId>
+				<version>${hisrc-hyperjaxb-annox-plugin.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-basicjaxb-ant</artifactId>
+				<version>${hisrc-basicjaxb.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.patrodyne.jvnet</groupId>
+				<artifactId>hisrc-basicjaxb-tools</artifactId>
+				<version>${hisrc-basicjaxb.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 	<build>
 		<defaultGoal>package</defaultGoal>
 		<plugins>

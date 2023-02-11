@@ -51,6 +51,7 @@ New goals for the next release are:
 * Set log levels for basic strategies in simplelogger.properties.
 * Compile sources and generate classes for Java release v11 using JDK 17.
 * Replaced `maven.compiler.source/target="11"` with `maven.compiler.release="11"`.
+* Update JAXB dependencies from 3.x to 4.x.
 
 ### Status
 
@@ -64,6 +65,7 @@ New goals for the next release are:
 * Set log levels for basic strategies in simplelogger.properties.
 * Compile sources and generate classes for Java release v11 using JDK 17.
 * Replaced `maven.compiler.source/target="11"` with `maven.compiler.release="11"`.
+* Update JAXB dependencies from 3.x to 4.x.
 
 ### Fork History
 
