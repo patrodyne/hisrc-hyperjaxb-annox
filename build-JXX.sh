@@ -4,7 +4,7 @@
 # Example: build-JXX.sh clean install
 #
 # Profile Id: none - default, install common jars to local repository.
-# Profile Id: - samples package sample plus default projects.
+# Profile Id: assembly - assemble (zip) explorer, samples projects.
 # Profile Id: tests - package test plus default projects.
 # Profile Id: all - package the above.
 # Profile Id: sonatype-oss-release - upload default artifacts to central repository.
@@ -31,7 +31,8 @@ else
   mvn ${JVM_SYS_PROPS} "$@"
 fi
 
-# mvn -DskipTests=true -Pnexus-deploy clean deploy
-# mvn -DskipTests=true -DdryRun=false release:clean
-# mvn -DskipTests=true -DdryRun=true release:prepare
-# mvn -DskipTests=true -DdryRun=true release:perform
+# ./build-JXX.sh -DskipTests=true clean install
+# ./build-JXX.sh -DskipTests=true -Pnexus-deploy clean deploy
+# ./build-JXX.sh -DskipTests=true -DdryRun=false release:clean
+# ./build-JXX.sh -DskipTests=true -DdryRun=false release:prepare
+# ./build-JXX.sh -DskipTests=true -DdryRun=false release:perform
