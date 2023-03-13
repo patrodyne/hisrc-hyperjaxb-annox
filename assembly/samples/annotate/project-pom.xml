@@ -9,7 +9,7 @@
 	<artifactId>${project.artifactId}</artifactId>
 	<version>${hisrc-hyperjaxb-annox-plugin.version}</version>
 	<packaging>jar</packaging>
-	<name>HiSrc HyperJAXB Annox Samples [annotate:maven]</name>
+	<name>${project.name}</name>
 	<properties>
 		<maven.compiler.release>${maven.compiler.release}</maven.compiler.release>
 		<maven-min.version>${maven-min.version}</maven-min.version>
@@ -139,6 +139,7 @@
 				<version>${maven-enforcer-plugin.version}</version>
 				<executions>
 					<execution>
+						<?m2e ignore?>
 						<id>enforce-java-maven</id>
 						<goals>
 							<goal>enforce</goal>
