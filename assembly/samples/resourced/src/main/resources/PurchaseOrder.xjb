@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jaxb:bindings jaxb:version="3.0"
+	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox"
+	jaxb:extensionBindingPrefixes="annox"
+>
+	<!--  Global Bindings -->
+	<jaxb:globalBindings localScoping="toplevel">
+		<jaxb:serializable uid="20230401" />
+	</jaxb:globalBindings>
+
+	<jaxb:bindings schemaLocation="PurchaseOrder.xsd" node="/xsd:schema" >
+
+		<!-- Items -->
+		<jaxb:bindings node="xsd:complexType[@name='Items']">
+		
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlAccessorType"/>
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlType"/>
+			
+		</jaxb:bindings>
+
+		<!-- Item -->
+		<jaxb:bindings node="xsd:complexType[@name='Items']//xsd:element[@name='item']/xsd:complexType">
+		
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlAccessorType"/>
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlType"/>
+			
+			<jaxb:bindings node="//xsd:element[@name='productName']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+	
+			<jaxb:bindings node="//xsd:element[@name='USPrice']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+	
+			<jaxb:bindings node="//xsd:element[@name='shipDate']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlSchemaType"/>
+			</jaxb:bindings>
+	
+			<jaxb:bindings node="//xsd:attribute[@name='partNum']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlAttribute"/>
+			</jaxb:bindings>
+			
+		</jaxb:bindings>
+
+		<!-- USAddress -->
+		<jaxb:bindings node="xsd:complexType[@name='USAddress']">
+		
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlAccessorType"/>
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlType"/>
+
+			<jaxb:bindings node="//xsd:element[@name='name']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+	
+			<jaxb:bindings node="//xsd:element[@name='street']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+	
+			<jaxb:bindings node="//xsd:element[@name='city']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+	
+			<jaxb:bindings node="//xsd:element[@name='state']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+	
+			<jaxb:bindings node="//xsd:element[@name='zip']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+
+			<jaxb:bindings node="//xsd:attribute[@name='country']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlAttribute"/>
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.adapters.XmlJavaTypeAdapter"/>
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlSchemaType"/>
+			</jaxb:bindings>
+			
+		</jaxb:bindings>
+
+
+		<!-- PurchaseOrder -->
+		<jaxb:bindings node="xsd:element[@name='purchaseOrder']/xsd:complexType">
+		
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlAccessorType"/>
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlType"/>
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlRootElement"/>
+
+			<jaxb:bindings node="//xsd:element[@name='shipTo']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+
+			<jaxb:bindings node="//xsd:element[@name='billTo']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+			
+			<jaxb:bindings node="//xsd:element[@name='items']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+			</jaxb:bindings>
+			
+			<jaxb:bindings node="//xsd:attribute[@name='orderDate']">
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlAttribute"/>
+				<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlSchemaType"/>
+			</jaxb:bindings>
+			
+		</jaxb:bindings>
+		
+	</jaxb:bindings>
+
+</jaxb:bindings>
+<!-- vi:set tabstop=4 hardtabs=4 shiftwidth=4 noexpandtab:-->

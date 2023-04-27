@@ -7,6 +7,7 @@
 >
 
 	<jaxb:bindings schemaLocation="schema.xsd" node="/xsd:schema">
+
 		<jaxb:bindings node="xsd:complexType[@name='issueJIIB43Type']">
 			<annox:annotate target="class">@jakarta.xml.bind.annotation.XmlRootElement("someElement")</annox:annotate>
 			<annox:annotate target="package">@jakarta.xml.bind.annotation.XmlSchema(elementFormDefault=javax.xml.bind.annotation.XmlNsForm.QUALIFIED)</annox:annotate>
@@ -16,19 +17,30 @@
 		<jaxb:bindings node="xsd:complexType[@name='gh16Type']/xsd:sequence/xsd:element[@name='x']">
 			<!--jaxb:class ref="org.jvnet.hyperjaxb_annox.tests.issues.Gh16Type" /-->
 		</jaxb:bindings>
+
 		<jaxb:bindings node="xsd:complexType[@name='gh16Type']/xsd:sequence/xsd:element[@name='x']">
 			<annox:annotate target="field">
 				<annox:annotate annox:class="java.lang.Deprecated" />
 			</annox:annotate>
 		</jaxb:bindings>
+
 		<jaxb:bindings node="xsd:complexType[@name='gh36Type']/xsd:simpleContent/xsd:extension/xsd:attribute[@name='attr']">
 			<annox:annotate>@com.fasterxml.jackson.annotation.JsonView(java.lang.Object.class)</annox:annotate>
 		</jaxb:bindings>
-		<jaxb:bindings node="xsd:complexType[@name='gh26Type']/xsd:sequence/xsd:element[@name='x']">
-			<annox:removeAnnotation class="jakarta.xml.bind.annotation.XmlElement" target="field"/>
+
+		<jaxb:bindings node="xsd:complexType[@name='gh26Type']">
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlAccessorType"/>
+			<annox:removeAnnotation target="class" class="jakarta.xml.bind.annotation.XmlType"/>
 		</jaxb:bindings>
+
+		<jaxb:bindings node="xsd:complexType[@name='gh26Type']/xsd:sequence/xsd:element[@name='x']">
+			<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
+		</jaxb:bindings>
+
 		<jaxb:bindings node="xsd:complexType[@name='gh51Type']">
 			<annox:annotateClass>@jakarta.xml.bind.annotation.XmlType(name="gh51TypeNew")</annox:annotateClass>
 		</jaxb:bindings>
+
 	</jaxb:bindings>
+
 </jaxb:bindings>

@@ -1,0 +1,96 @@
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----< org.patrodyne.jvnet:hisrc-hyperjaxb-annox-sample-resourced >-----
+[INFO] Building HiSrc HyperJAXB Annox Assembly Sample [resourced] 2.1.0
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.5:clean (default-clean) @ hisrc-hyperjaxb-annox-sample-resourced ---
+[INFO] Deleting hisrc-hyperjaxb-annox-sample-resourced-2.1.0/target
+[INFO] 
+[INFO] --- hisrc-higherjaxb-maven-plugin:2.1.0:generate (default) @ hisrc-hyperjaxb-annox-sample-resourced ---
+[INFO] Sources are not up-to-date, XJC will be executed.
+[INFO] Episode file [hisrc-hyperjaxb-annox-sample-resourced-2.1.0/target/generated-sources/xjc/META-INF/sun-jaxb.episode] was augmented with if-exists="true" attributes.
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:resources (default-resources) @ hisrc-hyperjaxb-annox-sample-resourced ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 7 resources
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:compile (default-compile) @ hisrc-hyperjaxb-annox-sample-resourced ---
+[INFO] Changes detected - recompiling the module! :source
+[INFO] Compiling 7 source files with javac [debug release 11] to target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.6:testResources (default-testResources) @ hisrc-hyperjaxb-annox-sample-resourced ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 2 resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.11.0:testCompile (default-testCompile) @ hisrc-hyperjaxb-annox-sample-resourced ---
+[INFO] Changes detected - recompiling the module! :dependency
+[INFO] Compiling 1 source file with javac [debug release 11] to target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:3.0.0-M8:test (default-test) @ hisrc-hyperjaxb-annox-sample-resourced ---
+[INFO] Using auto detected provider org.apache.maven.surefire.junitplatform.JUnitPlatformProvider
+[INFO] 
+[INFO] -------------------------------------------------------
+[INFO]  T E S T S
+[INFO] -------------------------------------------------------
+[INFO] Running org.example.po.PurchaseOrderTest
+18:05:05:435 INFO Schema Validation of XML is ON.
+18:05:05:438 DEBUG Testing samples, start
+18:05:05:440 DEBUG Sample directory [hisrc-hyperjaxb-annox-sample-resourced-2.1.0/src/test/samples].
+18:05:05:450 DEBUG Testing sample, start [po.xml].
+18:05:05:469 DEBUG PurchaseOrder:
+
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<purchaseOrder orderDate="1999-10-20" xmlns="http://example.org/po">
+    <shipTo country="US">
+        <name>Alice Smith</name>
+        <street>123 Maple Street</street>
+        <city>Mill Valley</city>
+        <state>CA</state>
+        <zip>90952</zip>
+    </shipTo>
+    <billTo country="US">
+        <name>Robert Smith</name>
+        <street>8 Oak Avenue</street>
+        <city>Old Town</city>
+        <state>PA</state>
+        <zip>95819</zip>
+    </billTo>
+    <comment>Hurry, my lawn is going wild!</comment>
+    <items>
+        <item partNum="872-AA">
+            <productName>Lawnmower</productName>
+            <quantity>1</quantity>
+            <USPrice>148.95</USPrice>
+            <comment>Confirm this is electric</comment>
+        </item>
+        <item partNum="926-AA">
+            <productName>Baby Monitor</productName>
+            <quantity>1</quantity>
+            <USPrice>39.98</USPrice>
+            <shipDate>1999-05-21</shipDate>
+        </item>
+    </items>
+</purchaseOrder>
+
+18:05:05:470 TRACE PO OrderDate: 1999-10-20
+18:05:05:472 TRACE PO BillTo: USAddress@43f82e78[Robert Smith, 8 Oak Avenue, Old Town, PA, 95819, US]
+18:05:05:473 TRACE PO ShipTo: USAddress@32f232a5[Alice Smith, 123 Maple Street, Mill Valley, CA, 90952, US]
+18:05:05:473 TRACE PO Comment: Hurry, my lawn is going wild!
+18:05:05:473 TRACE PO Item: Item@530712d[Lawnmower, 1, 148.95, Confirm this is electric, <null>, 872-AA]
+18:05:05:473 TRACE PO Item: Item@2df6226d[Baby Monitor, 1, 39.98, <null>, 1999-05-21, 926-AA]
+18:05:05:473 INFO Testing sample, SUCCESS [po.xml].
+18:05:05:473 DEBUG Testing samples, finish
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.412 s - in org.example.po.PurchaseOrderTest
+[INFO] 
+[INFO] Results:
+[INFO] 
+[INFO] Tests run: 1, Failures: 0, Errors: 0, Skipped: 0
+[INFO] 
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.257 s
+[INFO] Finished at: 2023-04-27T18:05:05-04:00
+[INFO] ------------------------------------------------------------------------
