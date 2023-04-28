@@ -99,7 +99,9 @@ The selective removal of **JAXB** annotations is configured in the [XJB][30] fil
 ...
 ~~~
 
-The `removeAnnotation` element declares the `target` scope and the `class` (annotation), to be removed, for the annotations bound to the `Items` type, for this demonstration.
+The `removeAnnotation` element declares the `target` scope and the `class` (annotation), to be removed, for the annotations bound to the `Items` type, for this demonstration
+
+The `target` attribute accepts these scopes: `"package"`, `"class"`, `"getter"`, `"setter"`, `"field"`, `"setter-parameter"`, `"enum"`, `"enum-constant"`, `"enum-value-method"`, `"enum-fromValue-method"`, and `"element"`.
 
 Next, the [Main][25] and [PurchaseOrderTest][33] classes each create a `JAXBContext` with an `AnnoxAnnotationReader` to read [`ann.xml`][4] resource files and rebind the annotations in memory. Thus, the generated **JAXB** become *Plain Java Objects (POJOs)* while the context is provided in memory.
 
