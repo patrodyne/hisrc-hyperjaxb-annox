@@ -53,6 +53,7 @@ public class AnnotatingArrayValueVisitor implements
 //		return this.annotationArrayMember;
 //	}
 
+	@Override
 	public JAnnotationArrayMember visit(XXAnnotationAnnotationValue<?> value) {
 		final XAnnotation<?> xannotation = value.getXAnnotation();
 		// TODO illegal call to getAnnotationClass(), use
@@ -67,63 +68,77 @@ public class AnnotatingArrayValueVisitor implements
 		return this.annotationArrayMember;
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XBooleanAnnotationValue value) {
 		return annotationArrayMember.param(value.getValue());
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XByteAnnotationValue value) {
 		return annotationArrayMember.param(value.getValue());
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XCharAnnotationValue value) {
 		return annotationArrayMember.param(value.getValue());
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XDoubleAnnotationValue value) {
 		return annotationArrayMember.param(value.getValue());
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XFloatAnnotationValue value) {
 		return annotationArrayMember.param(value.getValue());
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XIntAnnotationValue value) {
 		return annotationArrayMember.param(value.getValue());
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XLongAnnotationValue value) {
 		return annotationArrayMember.param(value.getValue());
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XShortAnnotationValue value) {
 		return annotationArrayMember.param(value.getValue());
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XStringAnnotationValue value) {
 		return annotationArrayMember.param(value.getValue());
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XEnumAnnotationValue<?> value) {
 		final Enum<?> e = value.getValue();
 		return annotationArrayMember.param(e);
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XEnumByNameAnnotationValue<?> value) {
 		final JClass type = (JClass) CodeModelUtils.ref(this.codeModel,
 				value.getEnumClassName());
 		return annotationArrayMember.param(type.staticRef(value.getName()));
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XClassAnnotationValue<?> value) {
 		final JType type = this.codeModel._ref(value.getValue());
 		return param(type);
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XClassByNameAnnotationValue<?> value) {
 		final JType ref = CodeModelUtils.ref(codeModel, value.getClassName());
 		return param(ref);
 	}
 
+	@Override
 	public JAnnotationArrayMember visit(XArrayClassAnnotationValue<?, ?> value) {
 		JType type = CodeModelUtils.ref(this.codeModel,
 				value.getItemClassName());
@@ -138,6 +153,7 @@ public class AnnotatingArrayValueVisitor implements
 			return annotationArrayMember.param((JClass) type);
 		} else {
 			return annotationArrayMember.param(new JExpressionImpl() {
+				@Override
 				public void generate(JFormatter f) {
 					f.g(type).p(".class");
 				}

@@ -53,6 +53,7 @@ public class AnnotatingSingleValueVisitor implements
 //		return annotationUse;
 //	}
 
+	@Override
 	public JAnnotationUse visit(XXAnnotationAnnotationValue<?> value) {
 		final XAnnotation<?> xannotation = value.getXAnnotation();
 
@@ -66,63 +67,77 @@ public class AnnotatingSingleValueVisitor implements
 		return annotationUse;
 	}
 
+	@Override
 	public JAnnotationUse visit(XBooleanAnnotationValue value) {
 		return annotationUse.param(this.name, value.getValue());
 	}
 
+	@Override
 	public JAnnotationUse visit(XByteAnnotationValue value) {
 		return annotationUse.param(this.name, value.getValue());
 	}
 
+	@Override
 	public JAnnotationUse visit(XCharAnnotationValue value) {
 		return annotationUse.param(this.name, value.getValue());
 	}
 
+	@Override
 	public JAnnotationUse visit(XDoubleAnnotationValue value) {
 		return annotationUse.param(this.name, value.getValue());
 	}
 
+	@Override
 	public JAnnotationUse visit(XFloatAnnotationValue value) {
 		return annotationUse.param(this.name, value.getValue());
 	}
 
+	@Override
 	public JAnnotationUse visit(XIntAnnotationValue value) {
 		return annotationUse.param(this.name, value.getValue());
 	}
 
+	@Override
 	public JAnnotationUse visit(XLongAnnotationValue value) {
 		return annotationUse.param(this.name, value.getValue());
 	}
 
+	@Override
 	public JAnnotationUse visit(XShortAnnotationValue value) {
 		return annotationUse.param(this.name, value.getValue());
 	}
 
+	@Override
 	public JAnnotationUse visit(XStringAnnotationValue value) {
 		return annotationUse.param(this.name, value.getValue());
 	}
 
+	@Override
 	public JAnnotationUse visit(XEnumAnnotationValue<?> value) {
 		final Enum<?> e = value.getValue();
 		return annotationUse.param(this.name, e);
 	}
 
+	@Override
 	public JAnnotationUse visit(XEnumByNameAnnotationValue<?> value) {
 		final JClass type = (JClass) CodeModelUtils.ref(this.codeModel,
 				value.getEnumClassName());
 		return annotationUse.param(this.name, type.staticRef(value.getName()));
 	}
 
+	@Override
 	public JAnnotationUse visit(XClassAnnotationValue<?> value) {
 		final JType type = this.codeModel._ref(value.getValue());
 		return param(type);
 	}
 
+	@Override
 	public JAnnotationUse visit(XClassByNameAnnotationValue<?> value) {
 		JType type = CodeModelUtils.ref(this.codeModel, value.getClassName());
 		return param(type);
 	}
 
+	@Override
 	public JAnnotationUse visit(XArrayClassAnnotationValue<?, ?> value) {
 		JType type = CodeModelUtils.ref(this.codeModel,
 				value.getItemClassName());
@@ -137,6 +152,7 @@ public class AnnotatingSingleValueVisitor implements
 			return annotationUse.param(this.name, (JClass) type);
 		} else {
 			return annotationUse.param(this.name, new JExpressionImpl() {
+				@Override
 				public void generate(JFormatter f) {
 					f.g(type).p(".class");
 				}
