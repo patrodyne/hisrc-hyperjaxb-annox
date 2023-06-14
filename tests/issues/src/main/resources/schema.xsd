@@ -15,6 +15,7 @@
 			</jaxb:schemaBindings>
 		</xs:appinfo>
 	</xs:annotation>
+	
 	<xs:complexType name="issueJIIB43Type" mixed="true">
 		<xs:sequence>
 			<xs:element type="issueJIIB43Type" name="someElement" maxOccurs="unbounded" minOccurs="0"/>
@@ -54,6 +55,13 @@
 			</xs:element>
 		</xs:sequence>
 	</xs:complexType>
+
+	<xs:simpleType name="gh26Enum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="a" />
+			<xs:enumeration value="b" />
+		</xs:restriction>
+	</xs:simpleType>
 
 	<xs:complexType name="gh51Type" mixed="true">
 		<xs:attribute name="Lan" type="xs:string" use="optional"/>

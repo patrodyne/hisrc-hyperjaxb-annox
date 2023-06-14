@@ -37,6 +37,19 @@
 			<annox:removeAnnotation target="field" class="jakarta.xml.bind.annotation.XmlElement"/>
 		</jaxb:bindings>
 
+		<jaxb:bindings node="xsd:simpleType[@name='gh26Enum']">
+			<annox:removeAnnotation target="enum" class="jakarta.xml.bind.annotation.XmlType"/>
+			<annox:removeAnnotation target="enum" class="jakarta.xml.bind.annotation.XmlEnum"/>
+		</jaxb:bindings>
+
+		<jaxb:bindings node="xsd:simpleType[@name='gh26Enum']/xsd:restriction/xsd:enumeration[@value='a']">
+			<annox:removeAnnotation target="enum-constant" class="jakarta.xml.bind.annotation.XmlEnumValue"/>
+		</jaxb:bindings>
+
+		<jaxb:bindings node="xsd:simpleType[@name='gh26Enum']/xsd:restriction/xsd:enumeration[@value='b']">
+			<annox:removeAnnotation target="enum-constant" class="jakarta.xml.bind.annotation.XmlEnumValue"/>
+		</jaxb:bindings>
+
 		<jaxb:bindings node="xsd:complexType[@name='gh51Type']">
 			<annox:annotateClass>@jakarta.xml.bind.annotation.XmlType(name="gh51TypeNew")</annox:annotateClass>
 		</jaxb:bindings>

@@ -34,10 +34,6 @@
 					<groupId>org.apache.commons</groupId>
 					<artifactId>commons-lang3</artifactId>
 				</exclusion>
-				<exclusion>
-					<groupId>org.patrodyne.jvnet</groupId>
-					<artifactId>hisrc-basicjaxb-runtime</artifactId>
-				</exclusion>
 			</exclusions>
 		</dependency>
 		<dependency>
