@@ -4,7 +4,7 @@ import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static java.util.Collections.unmodifiableSet;
 import static org.apache.commons.lang3.StringUtils.isBlank;
-import static org.jvnet.basicjaxb.locator.util.LocatorUtils.getLocation;
+import static org.jvnet.basicjaxb.util.LocatorUtils.toLocation;
 import static org.jvnet.basicjaxb_annox.Constants.NAMESPACE_URI;
 import static org.jvnet.hyperjaxb_annox.plugin.AnnotationTarget.CLASS;
 import static org.jvnet.hyperjaxb_annox.plugin.AnnotationTarget.ELEMENT;
@@ -238,7 +238,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin
 					if ( removeAnnotation(theElementOwner, customization, element, annotatable) )
 					{
 						debug("{}, removeAnnotationFromElementOutline; Class={}",
-							getLocation(theElementClass.metadata), theElementClass.name());
+							toLocation(customization, elementOutline), theElementClass.name());
 					}
 				}
 				catch (IllegalArgumentException iaex)
@@ -279,7 +279,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin
 					if ( removeAnnotation(theClassRefOwner, customization, element, annotatable) )
 					{
 						debug("{}, removeAnnotationFromClassOutline; Class={}",
-							getLocation(theClassRef.metadata), theClassRef.name());
+							toLocation(customization, classOutline), theClassRef.name());
 					}
 				}
 				catch (IllegalArgumentException iaex)
@@ -320,7 +320,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin
 					if ( removeAnnotation(fieldParentRefOwner, customization, element, annotatable) )
 					{
 						trace("{}, removeAnnotationFromFieldOutline; Class={}, Field={}",
-							getLocation(fieldInfo.getLocator()), fieldParentRef.name(), fieldInfo.getName(false));
+							toLocation(customization, fieldOutline), fieldParentRef.name(), fieldInfo.getName(false));
 					}
 				}
 				catch (IllegalArgumentException iaex)
@@ -360,7 +360,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin
 					if ( removeAnnotation(theEnumClassOwner, customization, element, annotatable) )
 					{
 						debug("{}, removeAnnotationFromEnumOutline; Enum={}",
-							getLocation(theEnumClass.metadata), theEnumClass.name());
+							toLocation(customization, enumOutline), theEnumClass.name());
 					}
 				}
 				catch (IllegalArgumentException iaex)
@@ -399,7 +399,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin
 					if ( removeAnnotation(enumOutlineParentOwner, customization, element, annotatable) )
 					{
 						trace("{}, removeAnnotationFromEnumConstantOutline; Class={}, EnumConstant={}",
-							getLocation(enumClass.metadata), enumClass.name(), enumConstantOutline.constRef.getName());
+							toLocation(customization, enumOutline), enumClass.name(), enumConstantOutline.constRef.getName());
 					}
 				}
 				catch (IllegalArgumentException iaex)
