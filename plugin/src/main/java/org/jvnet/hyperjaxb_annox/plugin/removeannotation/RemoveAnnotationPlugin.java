@@ -208,7 +208,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin
 		for (final EnumOutline enumOutline : outline.getEnums())
 			processEnumOutline(enumOutline);
 		
-		return true;
+		return !hadError(outline.getErrorReceiver());
 	}
 
 	protected void processElementOutline(ElementOutline elementOutline) throws SAXParseException
