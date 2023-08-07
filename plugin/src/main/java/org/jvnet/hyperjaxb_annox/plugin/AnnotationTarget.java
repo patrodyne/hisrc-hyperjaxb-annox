@@ -1,8 +1,8 @@
 package org.jvnet.hyperjaxb_annox.plugin;
 
 import static java.lang.String.format;
+import static java.util.Objects.requireNonNull;
 import static org.apache.commons.lang3.StringUtils.isBlank;
-import static org.apache.commons.lang3.Validate.notNull;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_CLASS_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_ELEMENT_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_ENUM_CONSTANT_QNAME;
@@ -335,8 +335,8 @@ public enum AnnotationTarget
 	 */
 	public static AnnotationTarget getAnnotationTarget(final Element element, AnnotationTarget defaultAnnotationTarget)
 	{
-		notNull(element);
-		notNull(defaultAnnotationTarget);
+		requireNonNull(element);
+		requireNonNull(defaultAnnotationTarget);
 		
 		final QName name = new QName(element.getNamespaceURI(), element.getLocalName());
 		if ( ANNOTATE_QNAME.equals(name) || ANNOTATE_PROPERTY_QNAME.equals(name) ||
