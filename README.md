@@ -4,12 +4,14 @@ XJC plugin to add arbitrary Java annotations to JAXB.
 
 ## Description
 
-This repository is a fork of [jaxb2-annotate-plugin][24]. The original project was developed by the admirable
-Alexey Valikov (a.k.a. [Highsource][2]). This repository contains Java projects to build Maven artifact(s)
-related to the Java Architecture for XML Binding (JAXB) framework. It is one of a family of repositories
-forked from [Highsource][2] that provide tools for JAXB and JPA processing. Repo and artifact names have
-been changed to reflect the familial connection between the repositories and to fix a conformance issue
-with the original `maven-jaxb2-plugin` name.
+This repository is a fork of [jaxb2-annotate-plugin][24]. The original project
+was developed by the admirable Alexey Valikov (a.k.a. [Highsource][2]). This
+repository contains Java projects to build Maven artifact(s) related to the
+Java Architecture for XML Binding (JAXB) framework. It is one of a family of
+repositories forked from [Highsource][2] that provide tools for JAXB and JPA
+processing. Repo and artifact names have been changed to reflect the familial
+connection between the repositories and to fix a conformance issue with the
+original `maven-jaxb2-plugin` name.
 
 ### List of repositories in this family
 
@@ -29,6 +31,7 @@ with the original `maven-jaxb2-plugin` name.
 
 #### GitHub Releases, Demonstrations
 
+* [HiSrc HyperJAXB Annox v2.1.1, Samples][33]
 * [HiSrc HyperJAXB Annox v2.1.0, Samples][32]
 * [HiSrc HyperJAXB Annox v2.0.0, Samples][31]
 
@@ -55,6 +58,15 @@ New goals for the next release are:
 * Review in progress.
 
 ### Fork History
+
+#### Version 2.1.1
+
+* Standardized the plugin option name and usage for all XJC plugins.
+* Standardized logging and error handling for all XJC plugins.
+* Added sample: [resourced](https://github.com/patrodyne/hisrc-hyperjaxb-annox/blob/master/assembly/samples/resourced/README.md).
+* Read JVM properties from main or test.
+* Update plugin and dependency versions.
+* Resolved deprecated method(s).
 
 #### Version 2.1.0
 
@@ -135,3 +147,5 @@ New goals for the next release are:
   [25]: https://github.com/highsource/hyperjaxb3#readme
   [31]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.0.0
   [32]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.1.0
+  [33]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.1.1
+
