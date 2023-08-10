@@ -39,7 +39,7 @@ original `maven-jaxb2-plugin` name.
 
 * Search
 	* [MVN Repository](https://mvnrepository.com/artifact/org.patrodyne.jvnet?sort=popular)
-	* [Central Repository](https://central.sonatype.com/search?q=org.patrodyne.jvnet%2520hisrc-hyperjaxb-annox&sort=name)
+	* [Central Repository](https://central.sonatype.com/search?q=org.patrodyne.jvnet+hisrc-hyperjaxb-annox&sort=name)
 * Index
 	* [Central Repository](https://repo1.maven.org/maven2/org/patrodyne/jvnet/)
 
