@@ -78,6 +78,7 @@
 							<goal>generate</goal>
 						</goals>
 						<configuration>
+							<debug>true</debug>
 							<args>
 								<arg>-no-header</arg>
 								<arg>-XhashCode</arg>
