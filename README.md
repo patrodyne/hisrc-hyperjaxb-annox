@@ -43,6 +43,10 @@ original `maven-jaxb2-plugin` name.
 * Index
 	* [Central Repository](https://repo1.maven.org/maven2/org/patrodyne/jvnet/)
 
+#### JavaDoc
+
+* [hisrc-hyperjaxb-annox-plugin][40]
+
 ### Goals
 
 New goals for the next release are:
@@ -148,4 +152,6 @@ New goals for the next release are:
   [31]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.0.0
   [32]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.1.0
   [33]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.1.1
+  [40]: https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-hyperjaxb-annox-plugin/latest/index.html
+
 
