@@ -12,7 +12,7 @@ import com.sun.tools.xjc.ModelLoader;
 import com.sun.tools.xjc.Options;
 import com.sun.tools.xjc.model.Model;
 
-public class RunPlugins
+public class RunIssuesBuildTest
 {
 	@BeforeEach
 	public void setUp()

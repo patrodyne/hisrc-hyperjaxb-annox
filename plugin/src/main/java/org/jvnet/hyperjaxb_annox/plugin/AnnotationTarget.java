@@ -10,6 +10,7 @@ import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_ENUM_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_ENUM_VALUE_METHOD_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_PACKAGE_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_OBJECT_FACTORY_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_PROPERTY_FIELD_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_PROPERTY_GETTER_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_PROPERTY_QNAME;
@@ -90,6 +91,43 @@ public enum AnnotationTarget
 			throws IllegalArgumentException, UnsupportedOperationException
 		{
 			return enumOutline.clazz._package();
+		}
+	},
+	OBJECT_FACTORY("objectFactory", ANNOTATE_OBJECT_FACTORY_QNAME)
+	{
+		@Override
+		public JAnnotatable getAnnotatable(Outline outline, FieldOutline fieldOutline)
+		{
+			return fieldOutline.parent()._package().objectFactory();
+		}
+
+		@Override
+		public JAnnotatable getAnnotatable(Outline outline, ClassOutline classOutline)
+			throws IllegalArgumentException, UnsupportedOperationException
+		{
+			return classOutline._package().objectFactory();
+		}
+
+		@Override
+		public JAnnotatable getAnnotatable(Outline outline, ElementOutline elementOutline)
+			throws IllegalArgumentException, UnsupportedOperationException
+		{
+			return elementOutline._package().objectFactory();
+		}
+
+		@Override
+		public JAnnotatable getAnnotatable(Outline outline, EnumConstantOutline enumConstantOutline)
+			throws IllegalArgumentException, UnsupportedOperationException
+		{
+			final CEnumLeafInfo enclosingClass = enumConstantOutline.target.getEnclosingClass();
+			return getAnnotatable(outline, outline.getEnum(enclosingClass));
+		}
+
+		@Override
+		public JAnnotatable getAnnotatable(Outline outline, EnumOutline enumOutline)
+			throws IllegalArgumentException, UnsupportedOperationException
+		{
+			return enumOutline._package().objectFactory();
 		}
 	},
 	CLASS("class", ANNOTATE_CLASS_QNAME)

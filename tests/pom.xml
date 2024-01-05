@@ -23,10 +23,12 @@
 		<module>one</module>
 	</modules>
 	<dependencies>
+		<!--
 		<dependency>
 			<groupId>org.patrodyne.jvnet</groupId>
 			<artifactId>hisrc-basicjaxb-runtime</artifactId>
 		</dependency>
+		-->
 		<dependency>
 			<groupId>org.patrodyne.jvnet</groupId>
 			<artifactId>hisrc-basicjaxb-testing</artifactId>
@@ -37,6 +39,32 @@
 			<artifactId>slf4j-simple</artifactId>
 			<scope>test</scope>
 		</dependency>
+		<!-- Maven JSR-330 Dependency Injection -->
+		<dependency>
+			<groupId>com.google.inject</groupId>
+			<artifactId>guice</artifactId>
+		</dependency>
+		<!-- Maven dependencies -->
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-plugin-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-connector-basic</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-transport-file</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.maven.resolver</groupId>
+			<artifactId>maven-resolver-transport-http</artifactId>
+		</dependency>
 	</dependencies>
 	<build>
 		<defaultGoal>test</defaultGoal>
@@ -45,6 +73,7 @@
 				<plugin>
 					<groupId>org.patrodyne.jvnet</groupId>
 					<artifactId>hisrc-higherjaxb-maven-plugin</artifactId>
+					<version>${hisrc-higherjaxb-maven-plugin.version}</version>
 					<executions>
 						<execution>
 							<id>default</id>
@@ -54,6 +83,26 @@
 						</execution>
 					</executions>
 				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<configuration>
+						<includes>
+							<include>**/*Test.java</include>
+						</includes>
+						<excludes>
+							<!-- Normally, these tests are run from the IDE. -->
+							<exclude>**/Run*Test.java</exclude>
+						</excludes>
+						<forkCount>1</forkCount>
+						<reuseForks>true</reuseForks>
+						<!-- need more memory than the default for our unit tests -->
+						<!-- OpenJDK 64-Bit Server VM warning: Ignoring option MaxPermSize; support was removed in 8.0 -->
+						<!--
+						<argLine>-Xmx1024M -XX:MaxPermSize=128M -verbose:gc</argLine>
+						-->
+					</configuration>
+				</plugin> 
 			</plugins>
 		</pluginManagement>
 		<plugins>

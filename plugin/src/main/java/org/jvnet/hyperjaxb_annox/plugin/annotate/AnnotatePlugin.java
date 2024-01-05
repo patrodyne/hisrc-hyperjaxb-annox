@@ -70,6 +70,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 	public static final QName ANNOTATE_PROPERTY_FIELD_QNAME = new QName(NAMESPACE_URI, "annotatePropertyField");
 	public static final QName ANNOTATE_PROPERTY_SETTER_PARAMETER_QNAME = new QName(NAMESPACE_URI, "annotatePropertySetterParameter");
 	public static final QName ANNOTATE_PACKAGE_QNAME = new QName(NAMESPACE_URI, "annotatePackage");
+	public static final QName ANNOTATE_OBJECT_FACTORY_QNAME = new QName(NAMESPACE_URI, "annotateObjectFactory");
 	public static final QName ANNOTATE_CLASS_QNAME = new QName(NAMESPACE_URI, "annotateClass");
 	public static final QName ANNOTATE_ELEMENT_QNAME = new QName(NAMESPACE_URI, "annotateElement");
 	public static final QName ANNOTATE_ENUM_QNAME = new QName(NAMESPACE_URI, "annotateEnum");
@@ -81,6 +82,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 		asList(
 			ANNOTATE_QNAME,
 			ANNOTATE_PACKAGE_QNAME,
+			ANNOTATE_OBJECT_FACTORY_QNAME,
 			ANNOTATE_CLASS_QNAME,
 			ANNOTATE_ELEMENT_QNAME,
 			ANNOTATE_PROPERTY_QNAME,

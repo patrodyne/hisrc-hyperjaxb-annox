@@ -12,7 +12,7 @@
 			<xsd:appinfo>
 				<jaxb:class/>
 				<annox:annotate>
-					<jl:SuppressWarnings value="unused"/>
+					<jl:SuppressWarnings value="unchecked rawtypes serial deprecation"/>
 				</annox:annotate>
 			</xsd:appinfo>
 		</xsd:annotation>
@@ -21,7 +21,6 @@
 	<xsd:complexType name="FooType">
 		<xsd:annotation>
 			<xsd:appinfo>
-				<annox:annotate>@java.lang.SuppressWarnings({"unchecked","rawtypes"})</annox:annotate>
 				<annox:annotatePackage>
 					@jakarta.xml.bind.annotation.XmlSchema(
 						elementFormDefault = jakarta.xml.bind.annotation.XmlNsForm.UNQUALIFIED,
@@ -29,6 +28,9 @@
 							@jakarta.xml.bind.annotation.XmlNs(prefix = "a", namespaceURI = "")
 						})
 				</annox:annotatePackage>
+				<annox:annotateObjectFactory>
+					@java.lang.SuppressWarnings("deprecation")
+				</annox:annotateObjectFactory>
 			</xsd:appinfo>
 		</xsd:annotation>
 		<xsd:sequence>
@@ -36,7 +38,6 @@
 			<xsd:element name="foobar" type="xsd:string">
 				<xsd:annotation>
 					<xsd:appinfo>
-						<annox:annotate>@java.lang.SuppressWarnings({"unchecked","rawtypes"})</annox:annotate>
 						<annox:annotate target="setter">@java.lang.Deprecated</annox:annotate>
 						<annox:annotate target="setter-parameter">@java.lang.Deprecated</annox:annotate>
 						<annox:annotate target="getter">@java.lang.Deprecated</annox:annotate>
