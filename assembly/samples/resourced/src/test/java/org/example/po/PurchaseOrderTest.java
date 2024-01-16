@@ -18,7 +18,7 @@ import javax.xml.validation.SchemaFactory;
 import org.glassfish.jaxb.runtime.api.JAXBRIContext;
 import org.glassfish.jaxb.runtime.v2.model.annotation.RuntimeAnnotationReader;
 import org.junit.jupiter.api.BeforeEach;
-import org.jvnet.basicjaxb.test.AbstractSamplesTest;
+import org.jvnet.basicjaxb.testing.AbstractSamplesTest;
 import org.jvnet.basicjaxb_annox.xml.bind.AnnoxAnnotationReader;
 import org.patrodyne.jvnet.basicjaxb.validation.SchemaOutputDomResolver;
 import org.xml.sax.SAXException;
