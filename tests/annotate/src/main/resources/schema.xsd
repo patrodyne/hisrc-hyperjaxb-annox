@@ -12,7 +12,7 @@
 			<xsd:appinfo>
 				<jaxb:class/>
 				<annox:annotate>
-					<jl:SuppressWarnings value="unchecked rawtypes serial deprecation"/>
+					<jl:SuppressWarnings value="deprecation"/>
 				</annox:annotate>
 			</xsd:appinfo>
 		</xsd:annotation>
