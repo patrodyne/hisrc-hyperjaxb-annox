@@ -90,9 +90,9 @@
 		<ant.version>1.10.14</ant.version>
 		<guice.version>5.1.0</guice.version>
 		<hibernate.version>7.0.0.Final</hibernate.version>
-		<hisrc-basicjaxb-annox-parser.version>2.2.0-SNAPSHOT</hisrc-basicjaxb-annox-parser.version>
-		<hisrc-basicjaxb.version>2.2.0-SNAPSHOT</hisrc-basicjaxb.version>
-		<hisrc-higherjaxb-maven-plugin.version>2.2.0-SNAPSHOT</hisrc-higherjaxb-maven-plugin.version>
+		<hisrc-basicjaxb-annox-parser.version>2.2.0</hisrc-basicjaxb-annox-parser.version>
+		<hisrc-basicjaxb.version>2.2.0</hisrc-basicjaxb.version>
+		<hisrc-higherjaxb-maven-plugin.version>2.2.0</hisrc-higherjaxb-maven-plugin.version>
 		<jaxb-api.version>4.0.1</jaxb-api.version>
 		<jaxb-imp.version>4.0.4</jaxb-imp.version>
 		<junit-jupiter.version>5.10.1</junit-jupiter.version>
