@@ -35,6 +35,7 @@ original `maven-jaxb2-plugin` name.
 
 #### GitHub Releases, Demonstrations
 
+* [HiSrc HyperJAXB Annox v2.2.0, Samples][34]
 * [HiSrc HyperJAXB Annox v2.1.1, Samples][33]
 * [HiSrc HyperJAXB Annox v2.1.0, Samples][32]
 * [HiSrc HyperJAXB Annox v2.0.0, Samples][31]
@@ -163,6 +164,7 @@ New goals for the next release are:
   [31]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.0.0
   [32]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.1.0
   [33]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.1.1
+  [34]: https://github.com/patrodyne/hisrc-hyperjaxb-annox/releases/tag/2.2.0
   [40]: https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-hyperjaxb-annox-plugin/latest/index.html
 
 
