@@ -89,7 +89,7 @@
 		<activation-imp.version>2.0.1</activation-imp.version>
 		<ant.version>1.10.14</ant.version>
 		<guice.version>5.1.0</guice.version>
-		<hibernate.version>7.0.0.Final</hibernate.version>
+		<hibernate-search.version>7.0.0.Final</hibernate-search.version>
 		<hisrc-basicjaxb-annox-parser.version>2.2.0</hisrc-basicjaxb-annox-parser.version>
 		<hisrc-basicjaxb.version>2.2.0</hisrc-basicjaxb.version>
 		<hisrc-higherjaxb-maven-plugin.version>2.2.0</hisrc-higherjaxb-maven-plugin.version>
@@ -262,12 +262,12 @@
 			<dependency>
 				<groupId>org.hibernate.search</groupId>
 				<artifactId>hibernate-search-mapper-orm</artifactId>
-				<version>${hibernate.version}</version>
+				<version>${hibernate-search.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.hibernate.search</groupId>
 				<artifactId>hibernate-search-v5migrationhelper-orm</artifactId>
-				<version>${hibernate.version}</version>
+				<version>${hibernate-search.version}</version>
 			</dependency>
 			<!-- Maven JSR-330 Dependency Injection -->
 			<dependency>
