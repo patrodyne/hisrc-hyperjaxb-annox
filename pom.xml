@@ -540,8 +540,28 @@
 							<goal>jar</goal>
 						</goals>
 						<configuration>
+							<additionalOptions>
+								<additionalOption>--link-modularity-mismatch=info</additionalOption>
+							</additionalOptions>
+							<detectLinks>true</detectLinks>
 							<doclint>all,-missing</doclint>
 							<failOnError>false</failOnError>
+							<links>
+								<link>https://javadoc.io/doc/jakarta.xml.bind/jakarta.xml.bind-api/${jaxb-api.version}/</link>
+								<link>https://javadoc.io/doc/org.glassfish.jaxb/codemodel/${jaxb-imp.version}/</link>
+								<link>https://javadoc.io/doc/org.glassfish.jaxb/jaxb-core/${jaxb-imp.version}/</link>
+								<link>https://javadoc.io/doc/org.glassfish.jaxb/jaxb-runtime/${jaxb-imp.version}/</link>
+								<link>https://javadoc.io/doc/org.glassfish.jaxb/jaxb-xjc/${jaxb-imp.version}/</link>
+								<!-- HiSrc BasicJAXB Annox links -->
+								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-annox-parser/latest</link>
+								<!-- HiSrc BasicJAXB links -->
+								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-ant/latest</link>
+								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-tools/latest</link>
+								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-plugins/latest</link>
+								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-runtime/latest</link>
+								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-testing/latest</link>
+							</links>
+							<quiet>false</quiet>
 						</configuration>
 					</execution>
 				</executions>
