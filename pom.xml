@@ -546,6 +546,7 @@
 							<detectLinks>true</detectLinks>
 							<doclint>all,-missing</doclint>
 							<failOnError>false</failOnError>
+							<offline>true</offline>
 							<links>
 								<link>https://javadoc.io/doc/jakarta.xml.bind/jakarta.xml.bind-api/${jaxb-api.version}/</link>
 								<link>https://javadoc.io/doc/org.glassfish.jaxb/codemodel/${jaxb-imp.version}/</link>
