@@ -7,9 +7,6 @@
 
 	<xs:annotation>
 		<xs:appinfo>
-			<jaxb:globalBindings generateIsSetMethod="true"
-				localScoping="toplevel"
-				fixedAttributeAsConstantProperty="true"/>
 			<jaxb:schemaBindings>
 				<jaxb:package name="org.jvnet.hyperjaxb_annox.tests.issues" />
 			</jaxb:schemaBindings>
