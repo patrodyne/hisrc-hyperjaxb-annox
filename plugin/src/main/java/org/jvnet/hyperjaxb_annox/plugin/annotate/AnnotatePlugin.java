@@ -4,6 +4,7 @@ import static java.lang.String.format;
 import static java.util.Arrays.asList;
 import static java.util.Collections.unmodifiableSet;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
+import static org.jvnet.basicjaxb.util.CustomizationUtils.getCustomizations;
 import static org.jvnet.basicjaxb.util.LocatorUtils.toLocation;
 import static org.jvnet.basicjaxb_annox.Constants.NAMESPACE_URI;
 import static org.jvnet.hyperjaxb_annox.plugin.AnnotationTarget.CLASS;
@@ -20,7 +21,6 @@ import javax.xml.namespace.QName;
 
 import org.jvnet.basicjaxb.plugin.AbstractParameterizablePlugin;
 import org.jvnet.basicjaxb.plugin.AbstractPlugin;
-import org.jvnet.basicjaxb.util.CustomizationUtils;
 import org.jvnet.basicjaxb_annox.model.XAnnotation;
 import org.jvnet.basicjaxb_annox.parser.XAnnotationParser;
 import org.jvnet.basicjaxb_annox.parser.exception.AnnotationElementParseException;
@@ -243,7 +243,9 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 
 	protected void processElementOutline(ElementOutline elementOutline) throws SAXParseException
 	{
-		final CCustomizations customizations = CustomizationUtils.getCustomizations(elementOutline);
+		final CCustomizations customizations = getCustomizations(elementOutline);
+		debug("{}, processElementOutline; Customizations: {}", toLocation(elementOutline),
+			customizations != null ? customizations.size() : 0);
 		annotateElementOutline(elementOutline, customizations);
 	}
 
@@ -273,7 +275,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 				}
 				catch (IllegalArgumentException iaex)
 				{
-					getLogger().error("Error applying the annotation.", iaex);
+					error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -281,7 +283,9 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 
 	protected void processClassOutline(ClassOutline classOutline) throws SAXParseException
 	{
-		final CCustomizations customizations = CustomizationUtils.getCustomizations(classOutline);
+		final CCustomizations customizations = getCustomizations(classOutline);
+		debug("{}, processClassOutline; Customizations: {}", toLocation(classOutline),
+			customizations != null ? customizations.size() : 0);
 		annotateClassOutline(classOutline, customizations);
 		
 		for (final FieldOutline fieldOutline : classOutline.getDeclaredFields())
@@ -314,7 +318,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 				}
 				catch (IllegalArgumentException iaex)
 				{
-					getLogger().error("Error applying the annotation.", iaex);
+					error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -323,7 +327,9 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 	protected void processFieldOutline(ClassOutline classOutline, FieldOutline fieldOutline)
 		throws SAXParseException
 	{
-		final CCustomizations customizations = CustomizationUtils.getCustomizations(fieldOutline);
+		final CCustomizations customizations = getCustomizations(fieldOutline);
+		debug("{}, processFieldOutline; Customizations: {}", toLocation(fieldOutline),
+			customizations != null ? customizations.size() : 0);
 		annotateFieldOutline(fieldOutline, customizations);
 	}
 
@@ -355,7 +361,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 				}
 				catch (IllegalArgumentException iaex)
 				{
-					getLogger().error("Error applying the annotation.", iaex);
+					error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -363,7 +369,9 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 
 	protected void processEnumOutline(EnumOutline enumOutline) throws SAXParseException
 	{
-		final CCustomizations customizations = CustomizationUtils.getCustomizations(enumOutline);
+		final CCustomizations customizations = getCustomizations(enumOutline);
+		debug("{}, processEnumOutline; Customizations: {}", toLocation(enumOutline),
+			customizations != null ? customizations.size() : 0);
 		annotateEnumOutline(enumOutline, customizations);
 		for (final EnumConstantOutline enumConstantOutline : enumOutline.constants)
 			processEnumConstantOutline(enumOutline, enumConstantOutline);
@@ -395,7 +403,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 				}
 				catch (IllegalArgumentException iaex)
 				{
-					getLogger().error("Error applying the annotation.", iaex);
+					error("Error applying the annotation.", iaex);
 				}
 			}
 		}
@@ -404,7 +412,9 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 	protected void processEnumConstantOutline(EnumOutline enumOutline, EnumConstantOutline enumConstantOutline)
 		throws SAXParseException
 	{
-		final CCustomizations customizations = CustomizationUtils.getCustomizations(enumConstantOutline);
+		final CCustomizations customizations = getCustomizations(enumConstantOutline);
+		debug("{}, processEnumConstantOutline; Customizations: {}", toLocation(enumConstantOutline),
+			customizations != null ? customizations.size() : 0);
 		annotateEnumConstantOutline(enumOutline, enumConstantOutline, customizations);
 	}
 
@@ -435,7 +445,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 				}
 				catch (IllegalArgumentException iaex)
 				{
-					getLogger().error("Error applying the annotation.", iaex);
+					error("Error applying the annotation.", iaex);
 				}
 			}
 		}
