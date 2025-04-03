@@ -17,7 +17,19 @@ import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_PROPERTY_SETTER_PARAMETER_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_PROPERTY_SETTER_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.annotate.AnnotatePlugin.ANNOTATE_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_CLASS_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_ELEMENT_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_ENUM_CONSTANT_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_ENUM_FROM_VALUE_METHOD_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_ENUM_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_ENUM_VALUE_METHOD_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_OBJECT_FACTORY_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_PACKAGE_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_PROPERTY_FIELD_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_PROPERTY_GETTER_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_PROPERTY_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_PROPERTY_SETTER_PARAMETER_QNAME;
+import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_FROM_PROPERTY_SETTER_QNAME;
 import static org.jvnet.hyperjaxb_annox.plugin.removeannotation.RemoveAnnotationPlugin.REMOVE_ANNOTATION_QNAME;
 
 import java.util.Arrays;
@@ -56,7 +68,7 @@ public enum AnnotationTarget
 {
 	// Target enumerations with methods to get an annotatable.
 	
-	PACKAGE("package", ANNOTATE_PACKAGE_QNAME)
+	PACKAGE("package", ANNOTATE_PACKAGE_QNAME, REMOVE_ANNOTATION_FROM_PACKAGE_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, FieldOutline fieldOutline)
@@ -93,7 +105,7 @@ public enum AnnotationTarget
 			return enumOutline.clazz._package();
 		}
 	},
-	OBJECT_FACTORY("objectFactory", ANNOTATE_OBJECT_FACTORY_QNAME)
+	OBJECT_FACTORY("objectFactory", ANNOTATE_OBJECT_FACTORY_QNAME, REMOVE_ANNOTATION_FROM_OBJECT_FACTORY_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, FieldOutline fieldOutline)
@@ -130,7 +142,7 @@ public enum AnnotationTarget
 			return enumOutline._package().objectFactory();
 		}
 	},
-	CLASS("class", ANNOTATE_CLASS_QNAME)
+	CLASS("class", ANNOTATE_CLASS_QNAME, REMOVE_ANNOTATION_FROM_CLASS_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, FieldOutline fieldOutline)
@@ -145,7 +157,7 @@ public enum AnnotationTarget
 			return classOutline.ref;
 		}
 	},
-	PROPERTY_GETTER("getter", ANNOTATE_PROPERTY_GETTER_QNAME)
+	PROPERTY_GETTER("getter", ANNOTATE_PROPERTY_GETTER_QNAME, REMOVE_ANNOTATION_FROM_PROPERTY_GETTER_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, FieldOutline fieldOutline)
@@ -160,7 +172,7 @@ public enum AnnotationTarget
 			return _getter;
 		}
 	},
-	PROPERTY_SETTER("setter", ANNOTATE_PROPERTY_SETTER_QNAME)
+	PROPERTY_SETTER("setter", ANNOTATE_PROPERTY_SETTER_QNAME, REMOVE_ANNOTATION_FROM_PROPERTY_SETTER_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, FieldOutline fieldOutline)
@@ -175,7 +187,7 @@ public enum AnnotationTarget
 			return _setter;
 		}
 	},
-	PROPERTY_FIELD("field", ANNOTATE_PROPERTY_FIELD_QNAME)
+	PROPERTY_FIELD("field", ANNOTATE_PROPERTY_FIELD_QNAME, REMOVE_ANNOTATION_FROM_PROPERTY_FIELD_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, FieldOutline fieldOutline)
@@ -190,7 +202,7 @@ public enum AnnotationTarget
 			return _field;
 		}
 	},
-	PROPERTY_SETTER_PARAMETER("setter-parameter", ANNOTATE_PROPERTY_SETTER_PARAMETER_QNAME)
+	PROPERTY_SETTER_PARAMETER("setter-parameter", ANNOTATE_PROPERTY_SETTER_PARAMETER_QNAME, REMOVE_ANNOTATION_FROM_PROPERTY_SETTER_PARAMETER_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, FieldOutline fieldOutline)
@@ -218,7 +230,7 @@ public enum AnnotationTarget
 			}
 		}
 	},
-	ENUM("enum", ANNOTATE_ENUM_QNAME)
+	ENUM("enum", ANNOTATE_ENUM_QNAME, REMOVE_ANNOTATION_FROM_ENUM_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, EnumConstantOutline enumConstantOutline)
@@ -235,7 +247,7 @@ public enum AnnotationTarget
 			return enumOutline.clazz;
 		}
 	},
-	ENUM_CONSTANT("enum-constant", ANNOTATE_ENUM_CONSTANT_QNAME)
+	ENUM_CONSTANT("enum-constant", ANNOTATE_ENUM_CONSTANT_QNAME, REMOVE_ANNOTATION_FROM_ENUM_CONSTANT_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, EnumConstantOutline enumConstantOutline)
@@ -244,7 +256,7 @@ public enum AnnotationTarget
 			return enumConstantOutline.constRef;
 		}
 	},
-	ENUM_VALUE_METHOD("enum-value-method", ANNOTATE_ENUM_VALUE_METHOD_QNAME)
+	ENUM_VALUE_METHOD("enum-value-method", ANNOTATE_ENUM_VALUE_METHOD_QNAME, REMOVE_ANNOTATION_FROM_ENUM_VALUE_METHOD_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, EnumOutline enumOutline)
@@ -260,7 +272,7 @@ public enum AnnotationTarget
 			return valueMethod;
 		}
 	},
-	ENUM_FROM_VALUE_METHOD("enum-fromValue-method", ANNOTATE_ENUM_FROM_VALUE_METHOD_QNAME)
+	ENUM_FROM_VALUE_METHOD("enum-fromValue-method", ANNOTATE_ENUM_FROM_VALUE_METHOD_QNAME, REMOVE_ANNOTATION_FROM_ENUM_FROM_VALUE_METHOD_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, EnumOutline enumOutline)
@@ -278,7 +290,7 @@ public enum AnnotationTarget
 			return fromValueMethod;
 		}
 	},
-	ELEMENT("element", ANNOTATE_ELEMENT_QNAME)
+	ELEMENT("element", ANNOTATE_ELEMENT_QNAME, REMOVE_ANNOTATION_FROM_ELEMENT_QNAME)
 	{
 		@Override
 		public JAnnotatable getAnnotatable(Outline outline, ElementOutline elementOutline)

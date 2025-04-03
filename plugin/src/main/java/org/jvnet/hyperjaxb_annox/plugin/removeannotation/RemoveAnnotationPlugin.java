@@ -65,6 +65,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin
 	public static final QName REMOVE_ANNOTATION_FROM_PROPERTY_FIELD_QNAME = new QName(NAMESPACE_URI, "removeAnnotationFromPropertyField");
 	public static final QName REMOVE_ANNOTATION_FROM_PROPERTY_SETTER_PARAMETER_QNAME = new QName(NAMESPACE_URI, "removeAnnotationFromPropertySetterParameter");
 	public static final QName REMOVE_ANNOTATION_FROM_PACKAGE_QNAME = new QName(NAMESPACE_URI, "removeAnnotationFromPackage");
+	public static final QName REMOVE_ANNOTATION_FROM_OBJECT_FACTORY_QNAME = new QName(NAMESPACE_URI, "removeAnnotationFromObjectFactory");
 	public static final QName REMOVE_ANNOTATION_FROM_CLASS_QNAME = new QName(NAMESPACE_URI, "removeAnnotationFromClass");
 	public static final QName REMOVE_ANNOTATION_FROM_ELEMENT_QNAME = new QName(NAMESPACE_URI, "removeAnnotationFromElement");
 	public static final QName REMOVE_ANNOTATION_FROM_ENUM_QNAME = new QName(NAMESPACE_URI, "removeAnnotationFromEnum");
@@ -76,6 +77,7 @@ public class RemoveAnnotationPlugin extends AbstractParameterizablePlugin
 		asList(
 			REMOVE_ANNOTATION_QNAME,
 			REMOVE_ANNOTATION_FROM_PACKAGE_QNAME,
+			REMOVE_ANNOTATION_FROM_OBJECT_FACTORY_QNAME,
 			REMOVE_ANNOTATION_FROM_CLASS_QNAME,
 			REMOVE_ANNOTATION_FROM_ELEMENT_QNAME,
 			REMOVE_ANNOTATION_FROM_PROPERTY_QNAME,
