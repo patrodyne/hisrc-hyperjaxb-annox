@@ -26,7 +26,8 @@
 		</jaxb:bindings>
 
 		<jaxb:bindings node="xsd:complexType[@name='gh16Type']/xsd:sequence/xsd:element[@name='x']">
-			<!--jaxb:class ref="org.jvnet.hyperjaxb_annox.tests.issues.Gh16Type" /-->
+			<!-- See https://github.com/highsource/jaxb2-annotate-plugin/issues/16 -->
+			<jaxb:class ref="org.jvnet.hyperjaxb_annox.tests.issues.Gh16Type"/>
 		</jaxb:bindings>
 
 		<jaxb:bindings node="xsd:complexType[@name='gh16Type']/xsd:sequence/xsd:element[@name='x']">

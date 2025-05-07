@@ -16,9 +16,9 @@
 		<root.basedir>${basedir}/..</root.basedir>
 	</properties>
 	<modules>
-		<module>annotations</module>
 		<module>annox</module>
 		<module>annotate</module>
+		<module>annotations</module>
 		<module>issues</module>
 		<module>one</module>
 	</modules>

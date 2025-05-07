@@ -5,7 +5,9 @@ import static java.util.Arrays.asList;
 import static java.util.Collections.unmodifiableSet;
 import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.jvnet.basicjaxb.util.CustomizationUtils.getCustomizations;
+import static org.jvnet.basicjaxb.util.CustomizationUtils.markClassRefAsAcknowledged;
 import static org.jvnet.basicjaxb.util.LocatorUtils.toLocation;
+import static org.jvnet.basicjaxb.util.OutlineUtils.processXmlTransient;
 import static org.jvnet.basicjaxb_annox.Constants.NAMESPACE_URI;
 import static org.jvnet.hyperjaxb_annox.plugin.AnnotationTarget.CLASS;
 import static org.jvnet.hyperjaxb_annox.plugin.AnnotationTarget.ELEMENT;
@@ -13,12 +15,9 @@ import static org.jvnet.hyperjaxb_annox.plugin.AnnotationTarget.ENUM;
 import static org.jvnet.hyperjaxb_annox.plugin.AnnotationTarget.ENUM_CONSTANT;
 import static org.jvnet.hyperjaxb_annox.plugin.AnnotationTarget.getAnnotationTarget;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
-import java.util.Map.Entry;
 
 import javax.xml.namespace.QName;
 
@@ -39,15 +38,8 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
 import com.sun.codemodel.JAnnotatable;
-import com.sun.codemodel.JAnnotationArrayMember;
-import com.sun.codemodel.JAnnotationStringValue;
-import com.sun.codemodel.JAnnotationUse;
-import com.sun.codemodel.JAnnotationValue;
-import com.sun.codemodel.JClass;
 import com.sun.codemodel.JCodeModel;
 import com.sun.codemodel.JDefinedClass;
-import com.sun.codemodel.JFieldVar;
-import com.sun.tools.xjc.generator.bean.ClassOutlineImpl;
 import com.sun.tools.xjc.model.CCustomizations;
 import com.sun.tools.xjc.model.CElementInfo;
 import com.sun.tools.xjc.model.CPluginCustomization;
@@ -60,10 +52,6 @@ import com.sun.tools.xjc.outline.EnumOutline;
 import com.sun.tools.xjc.outline.FieldOutline;
 import com.sun.tools.xjc.outline.Outline;
 
-import jakarta.xml.bind.annotation.XmlElement;
-import jakarta.xml.bind.annotation.XmlTransient;
-import jakarta.xml.bind.annotation.XmlType;
-
 /**
  * An XJC plugin to add an annotation class to a given target. The targets are
  * enumerated by {@link AnnotationTarget}.
@@ -72,11 +60,12 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 {
 	/** Name of Option to enable this plugin. */
 	private static final String OPTION_NAME = "Xannotate";
-	
+
 	/** Description of Option to enable this plugin. */
 	private static final String OPTION_DESC = "add arbitrary annotations to generated sources";
-	
+
 	// Binding names
+	private static final QName ANNOTATE_ANY_QNAME = new QName(NAMESPACE_URI, "");
 	public static final QName ANNOTATE_QNAME = new QName(NAMESPACE_URI, "annotate");
 	public static final QName ANNOTATE_PROPERTY_QNAME = new QName(NAMESPACE_URI, "annotateProperty");
 	public static final QName ANNOTATE_PROPERTY_GETTER_QNAME = new QName(NAMESPACE_URI, "annotatePropertyGetter");
@@ -91,7 +80,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 	public static final QName ANNOTATE_ENUM_CONSTANT_QNAME = new QName(NAMESPACE_URI, "annotateEnumConstant");
 	public static final QName ANNOTATE_ENUM_VALUE_METHOD_QNAME = new QName(NAMESPACE_URI, "annotateEnumValueMethod");
 	public static final QName ANNOTATE_ENUM_FROM_VALUE_METHOD_QNAME = new QName(NAMESPACE_URI, "annotateEnumFromValueMethod");
-	
+
 	public static final Set<QName> CUSTOMIZATION_ELEMENT_QNAMES = unmodifiableSet(new HashSet<QName>(
 		asList(
 			ANNOTATE_QNAME,
@@ -126,13 +115,13 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 	{
 		return CUSTOMIZATION_ELEMENT_QNAMES;
 	}
-	
+
 	private boolean isCustomizationElementName(final QName name)
 	{
 		return (name != null) && NAMESPACE_URI.equals(name.getNamespaceURI())
 			&& !RemoveAnnotationPlugin.CUSTOMIZATION_ELEMENT_QNAMES.contains(name);
 	}
-	
+
 	private String defaultFieldTarget = "getter";
 	public String getDefaultFieldTarget()
 	{
@@ -175,7 +164,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 	}
 
 	// Plugin Processing
-	
+
 	@Override
 	protected void beforeRun(Outline outline) throws Exception
 	{
@@ -192,7 +181,7 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 			info(sb.toString());
 		}
 	}
-	
+
 	@Override
 	protected void afterRun(Outline outline) throws Exception
 	{
@@ -205,26 +194,26 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 			info(sb.toString());
 		}
 	}
-	
+
 	/**
 	 * <p>
 	 * Run the plugin with and XJC {@link Outline}.
 	 * </p>
-	 * 
+	 *
 	 * <p>
 	 * Run an XJC plugin to add or modify the XJC {@link Outline}. An {@link Outline}
 	 * captures which code is generated for which model component. A {@link Model} is
 	 * a schema language neutral representation of the result of a schema parsing. XJC
 	 * uses this model to turn this into a series of Java source code.
 	 * </p>
-	 * 
+	 *
      * <p>
      * <b>Note:</b> This method is invoked only when a plugin is activated.
      * </p>
 	 *
      * @param outline
      *      This object allows access to various generated code.
-     * 
+     *
      * @return
      *      If the add-on executes successfully, return true.
      *      If it detects some errors but those are reported and
@@ -245,13 +234,13 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 			if (elementOutline != null)
 				processElementOutline(elementOutline);
 		}
-		
+
 		for (final ClassOutline classOutline : outline.getClasses())
 			processClassOutline(classOutline);
-		
+
 		for (final EnumOutline enumOutline : outline.getEnums())
 			processEnumOutline(enumOutline);
-		
+
 		return !hadError(outline.getErrorReceiver());
 	}
 
@@ -304,9 +293,9 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 
 		for (final FieldOutline fieldOutline : classOutline.getDeclaredFields())
 			processFieldOutline(classOutline, fieldOutline);
-		
+
 		// Process XmlTransient fields to be JAXB exclusive.
-		processXmlTransient((ClassOutlineImpl) classOutline);
+		processXmlTransient(classOutline);
 	}
 
 	protected void annotateClassOutline(final ClassOutline classOutline, final CCustomizations customizations)
@@ -341,110 +330,6 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 		}
 	}
 
-	// Process XmlTransient fields to be JAXB exclusive and to be omitted
-	// from the XmlType property order.
-	protected void processXmlTransient(ClassOutlineImpl coi)
-	{
-		// Create a map of the XmlTransient field(s) to be removed from the propOrder.
-		Set<String> xmlTransientFieldSet = new HashSet<>();
-		for ( Entry<String, JFieldVar> fieldEntry : coi.implClass.fields().entrySet() )
-		{
-			boolean isXmlTransientField = false;
-			Set<JAnnotationUse> excludeAnnotations = new HashSet<>();
-			JFieldVar fieldValue = fieldEntry.getValue();
-			for ( JAnnotationUse fieldAnnotation : fieldValue.annotations() )
-			{
-				JClass fieldAnnotationClass = fieldAnnotation.getAnnotationClass();
-				String fieldAnnotationClassFullName = fieldAnnotationClass.fullName();
-				if ( XmlTransient.class.getName().equals(fieldAnnotationClassFullName) )
-				{
-					isXmlTransientField = true;
-					xmlTransientFieldSet.add(fieldEntry.getKey());
-				}
-				else
-				{
-					// The field annotation is not XmlTransient. If it is a
-					// JAXB annotation then add it to the list of annotations
-					// that might be excluded.
-					//
-					// This set will be excluded ONLY when isXmlTransientField
-					// is true; otherwise, this set will be discarded.
-					if ( fieldAnnotationClassFullName.startsWith(XmlElement.class.getPackageName()))
-						excludeAnnotations.add(fieldAnnotation);
-				}
-			}
-
-			// @XmlTransient is mutually exclusive with all other
-			// Jakarta XML Binding defined annotations.
-			if ( isXmlTransientField )
-			{
-				for ( JAnnotationUse excludeAnnotation : excludeAnnotations )
-					fieldValue.removeAnnotation(excludeAnnotation);
-			}
-		}
-
-		// Prepare to remove XmlTransient field(s) from the XmlType's property order.
-		boolean replaceXmlTypeAnnUse = false;
-		List<String> auXmlTypePropOrderListNew = new ArrayList<>();
-		JAnnotationUse auXmlTypeOld = null;
-		for ( JAnnotationUse au : coi.implClass.annotations() )
-		{
-			// Is this annotation for XmlType?
-			if ( XmlType.class.getName().equals(au.getAnnotationClass().fullName()) )
-			{
-				auXmlTypeOld = au;
-				// Is there a property order member as an array.
-				JAnnotationValue auPropOrderValueOld = auXmlTypeOld.getAnnotationMembers().get("propOrder");
-				if ( auPropOrderValueOld instanceof JAnnotationArrayMember )
-				{
-					JAnnotationArrayMember auPropOrderMemberOld = (JAnnotationArrayMember) auPropOrderValueOld;
-					for ( JAnnotationValue auPropOrderMemberValueOld : auPropOrderMemberOld.annotations2() )
-					{
-						if ( auPropOrderMemberValueOld instanceof JAnnotationStringValue )
-						{
-							String auPropOrderMemberStringOld = auPropOrderMemberValueOld.toString();
-							// Exclude transient fields from the property order.
-							if ( xmlTransientFieldSet.contains(auPropOrderMemberStringOld) )
-								replaceXmlTypeAnnUse = true;
-							else
-								auXmlTypePropOrderListNew.add(auPropOrderMemberStringOld);
-						}
-					}
-				}
-			}
-		}
-		
-		// Is there a XMlType annotation that must be replaced with
-		// an XmlTransient exclusive property order?
-		if ( replaceXmlTypeAnnUse )
-		{
-			coi.implClass.removeAnnotation(auXmlTypeOld);
-			
-			JAnnotationUse auXmlTypeNew =
-				coi.implClass.annotate((auXmlTypeOld.getAnnotationClass()));
-
-			JAnnotationValue namespace = auXmlTypeOld.getAnnotationMembers().get("namespace");
-			if ( namespace != null )
-				auXmlTypeNew.param("namespace", namespace);
-
-			JAnnotationValue name = auXmlTypeOld.getAnnotationMembers().get("name");
-			if ( name != null )
-				auXmlTypeNew.param("name", name);
-			
-			JAnnotationArrayMember auPropOrderMemberNew = auXmlTypeNew.paramArray("propOrder");
-			for ( String propOrderItem : auXmlTypePropOrderListNew )
-				auPropOrderMemberNew.param(propOrderItem);
-			
-			JAnnotationValue factoryClass = auXmlTypeOld.getAnnotationMembers().get("factoryClass");
-			if ( factoryClass != null )
-				auXmlTypeNew.param("factoryClass", factoryClass);
-			
-			JAnnotationValue factoryMethod = auXmlTypeOld.getAnnotationMembers().get("factoryMethod");
-			if ( factoryMethod != null )
-				auXmlTypeNew.param("factoryMethod", factoryMethod);
-		}
-	}
-	
 	protected void processFieldOutline(ClassOutline classOutline, FieldOutline fieldOutline)
 		throws SAXParseException
 	{
@@ -452,6 +337,9 @@ public class AnnotatePlugin extends AbstractParameterizablePlugin
 		debug("{}, processFieldOutline; Customizations: {}", toLocation(fieldOutline),
 			customizations != null ? customizations.size() : 0);
 		annotateFieldOutline(fieldOutline, customizations);
+
+		// See https://github.com/highsource/jaxb2-annotate-plugin/issues/16
+		markClassRefAsAcknowledged(fieldOutline, ANNOTATE_ANY_QNAME);
 	}
 
 	protected void annotateFieldOutline(final FieldOutline fieldOutline, final CCustomizations customizations)
