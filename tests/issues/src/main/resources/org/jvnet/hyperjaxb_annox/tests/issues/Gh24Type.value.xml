@@ -1,1 +1,1 @@
-<annox:annotate xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox">@org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Marked("hyperjaxb_annox.plugin")</annox:annotate>
+<annox:annotate xmlns:annox="urn:jvnet.org:basicjaxb:xjc:annox">@org.jvnet.hyperjaxb_annox.plugin.annotate.tests.annotations.Marked("hyperjaxb_annox.plugin")</annox:annotate>

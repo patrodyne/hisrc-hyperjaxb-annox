@@ -2,7 +2,7 @@
 <xs:schema jaxb:version="3.0"
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
-	xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox"
+	xmlns:annox="urn:jvnet.org:basicjaxb:xjc:annox"
 	jaxb:extensionBindingPrefixes="annox"
 >
 	
@@ -25,7 +25,7 @@
 			<xs:appinfo>
 				<annox:annotate>
 				<A
-					xmlns="http://jvnet.org/basicjaxb/xjc/annox/org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
+					xmlns="urn:jvnet.org:basicjaxb:xjc:annox:org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
 					booleanField="false" byteField="0" charField="a"
 					classField="java.lang.String" anotherClassField="org.jvnet.hyperjaxb_annox.plugin.annotate.tests.One" doubleField="1" enumField="ONE"
 					floatField="2.3" intField="4" longField="5" shortField="6"
@@ -60,7 +60,7 @@
 						<annox:annotate>
 							
 							<A
-								xmlns="http://jvnet.org/basicjaxb/xjc/annox/org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
+								xmlns="urn:jvnet.org:basicjaxb:xjc:annox:org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
 								booleanField="false" byteField="0" charField="a"
 								classField="double" doubleField="1"
 								enumField="ONE" floatField="2.3" intField="4"
@@ -91,7 +91,7 @@
 						</annox:annotate>
 						<annox:annotate target="field">
 						    <A
-								xmlns="http://jvnet.org/basicjaxb/xjc/annox/org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
+								xmlns="urn:jvnet.org:basicjaxb:xjc:annox:org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
 								booleanField="false" byteField="0" charField="a"
 								classField="double[]" doubleField="1"
 								enumField="ONE" floatField="2.3" intField="4"
@@ -122,7 +122,7 @@
 						</annox:annotate>
 						<annox:annotate target="setter">
 							<A
-								xmlns="http://jvnet.org/basicjaxb/xjc/annox/org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
+								xmlns="urn:jvnet.org:basicjaxb:xjc:annox:org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
 								booleanField="false" byteField="0" charField="a"
 								classField="java.lang.String" doubleField="1"
 								enumField="ONE" floatField="2.3" intField="4"
@@ -153,7 +153,7 @@
 						</annox:annotate>
 						<annox:annotate target="class">
 							<A
-								xmlns="http://jvnet.org/basicjaxb/xjc/annox/org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
+								xmlns="urn:jvnet.org:basicjaxb:xjc:annox:org.jvnet.hyperjaxb_annox.plugin.annotate.tests"
 								booleanField="false" byteField="0" charField="a"
 								classField="java.lang.String" doubleField="1"
 								enumField="ONE" floatField="2.3" intField="4"
@@ -194,7 +194,7 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<annox:annotate>
-					<F xmlns="http://jvnet.org/basicjaxb/xjc/annox/org.jvnet.hyperjaxb_annox.plugin.annotate.tests" value="enum type" />
+					<F xmlns="urn:jvnet.org:basicjaxb:xjc:annox:org.jvnet.hyperjaxb_annox.plugin.annotate.tests" value="enum type" />
 				</annox:annotate>
 			</xs:appinfo>
 		</xs:annotation>
@@ -203,7 +203,7 @@
 				<xs:annotation>
 					<xs:appinfo>
 						<annox:annotate>
-							<F xmlns="http://jvnet.org/basicjaxb/xjc/annox/org.jvnet.hyperjaxb_annox.plugin.annotate.tests" value="enum constant" />
+							<F xmlns="urn:jvnet.org:basicjaxb:xjc:annox:org.jvnet.hyperjaxb_annox.plugin.annotate.tests" value="enum constant" />
 						</annox:annotate>
 					</xs:appinfo>
 				</xs:annotation>

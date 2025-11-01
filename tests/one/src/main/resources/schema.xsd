@@ -2,7 +2,7 @@
 <xs:schema
 	xmlns:xs="http://www.w3.org/2001/XMLSchema"
 	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
-	xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox"
+	xmlns:annox="urn:jvnet.org:basicjaxb:xjc:annox"
 	xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
 	jaxb:extensionBindingPrefixes="annox xjc"
 	jaxb:version="3.0"

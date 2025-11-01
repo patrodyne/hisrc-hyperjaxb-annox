@@ -369,11 +369,11 @@ public enum AnnotationTarget
 	 * 
 	 * <b>Element examples:</b>
 	 * <pre>{@code
-	 * {http://jvnet.org/basicjaxb/xjc/annox}annotate
-	 * {http://jvnet.org/basicjaxb/xjc/annox}annotateElement
-	 * {http://jvnet.org/basicjaxb/xjc/annox}annotateClass
-	 * {http://jvnet.org/basicjaxb/xjc/annox}annotatePropertyField
-	 * {http://jvnet.org/basicjaxb/xjc/annox}removeAnnotate
+	 * {urn:jvnet.org:basicjaxb:xjc:annox}annotate
+	 * {urn:jvnet.org:basicjaxb:xjc:annox}annotateElement
+	 * {urn:jvnet.org:basicjaxb:xjc:annox}annotateClass
+	 * {urn:jvnet.org:basicjaxb:xjc:annox}annotatePropertyField
+	 * {urn:jvnet.org:basicjaxb:xjc:annox}removeAnnotate
 	 * }</pre>
 	 * 
 	 * @param element An element representing an {@code annotate} or {@code removeAnnotate} action.

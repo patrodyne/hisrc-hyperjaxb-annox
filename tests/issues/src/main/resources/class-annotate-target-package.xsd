@@ -5,7 +5,7 @@
 	targetNamespace="urn:issues:class:annotate:target:package"
 	elementFormDefault="qualified"
 	xmlns:jaxb="https://jakarta.ee/xml/ns/jaxb"
-	xmlns:annox="http://jvnet.org/basicjaxb/xjc/annox"
+	xmlns:annox="urn:jvnet.org:basicjaxb:xjc:annox"
 	jaxb:extensionBindingPrefixes="annox"
 	jaxb:version="3.0"
 >
