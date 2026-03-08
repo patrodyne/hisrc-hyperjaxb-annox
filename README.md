@@ -55,21 +55,20 @@ original `maven-jaxb2-plugin` name.
 
 * [hisrc-hyperjaxb-annox-plugin][40]
 
-### Goals
-
-New goals for the next release are:
-
-* Review in progress.
-
-### Status
-
-* Review in progress.
-
-#### Completed
-
-* Review in progress.
-
 ### Fork History
+
+#### Version 3.0.0
+
+* Changed HiSrc namespace scheme from `http` to `urn`:
+    * `NEW: urn:jvnet.org:hyperjaxb:xjc:annox`
+    * `OLD: http://jvnet.org/basicjaxb/xjc/annox`
+* Use `java.time` instead of `XMLGregorianCalendar` in unit tests.
+* Added `XmlAdapter` implementations for `java.time` types.
+* Upgraded the project dependencies to the latest versions.
+* Upgraded the Maven plugin ecosystem to the latest versions.
+* Migrated distribution management from **OSSRH (Sonatype)** to a new **MCR-deploy** profile.
+* Refactored the `pom.xml` by removing legacy repository configurations and streamlining the `<scm>` and `<properties>` blocks.
+* Updated the `build-jxx.sh` script to reflect the new deployment path and ensure consistency across release goals.
 
 #### Version 2.2.1
 
