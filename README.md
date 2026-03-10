@@ -60,7 +60,7 @@ original `maven-jaxb2-plugin` name.
 #### Version 3.0.0
 
 * Changed HiSrc namespace scheme from `http` to `urn`:
-    * `NEW: urn:jvnet.org:hyperjaxb:xjc:annox`
+    * `NEW: urn:jvnet.org:basicjaxb:xjc:annox`
     * `OLD: http://jvnet.org/basicjaxb/xjc/annox`
 * Use `java.time` instead of `XMLGregorianCalendar` in unit tests.
 * Added `XmlAdapter` implementations for `java.time` types.
