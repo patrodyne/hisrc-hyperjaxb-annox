@@ -64,6 +64,7 @@ original `maven-jaxb2-plugin` name.
     * `OLD: http://jvnet.org/basicjaxb/xjc/annox`
 * Use `java.time` instead of `XMLGregorianCalendar` in unit tests.
 * Added `XmlAdapter` implementations for `java.time` types.
+* Exclude other JAXB annotations when `@XmlTransient` is present.
 * Upgraded the project dependencies to the latest versions.
 * Upgraded the Maven plugin ecosystem to the latest versions.
 * Migrated distribution management from **OSSRH (Sonatype)** to a new **MCR-deploy** profile.
