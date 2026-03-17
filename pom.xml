@@ -87,7 +87,7 @@
 		<junit-jupiter.version>6.0.3</junit-jupiter.version>
 		<junit-platform.version>6.0.3</junit-platform.version>
 		<maven.compiler.release>17</maven.compiler.release>
-		<maven-api.version>3.9.12</maven-api.version>
+		<maven-api.version>3.9.14</maven-api.version>
 		<maven-min.version>3.9.0</maven-min.version>
 		<maven-resolver.version>2.0.16</maven-resolver.version>
 		<maven-resolver-http.version>1.9.27</maven-resolver-http.version>
@@ -95,6 +95,8 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<slf4j.version>2.0.17</slf4j.version>
 		<threeten-jaxb.version>2.2.0</threeten-jaxb.version>
+
+		<root.basedir>${basedir}</root.basedir>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
@@ -534,6 +536,7 @@
 				<version>${maven-javadoc-plugin.version}</version>
 				<executions>
 					<execution>
+						<!-- TESTING: mvn clean javadoc:javadoc@attach-javadocs -->
 						<id>attach-javadocs</id>
 						<phase>verify</phase>
 						<goals>
@@ -543,30 +546,27 @@
 							<additionalOptions>
 								<additionalOption>--link-modularity-mismatch=info</additionalOption>
 							</additionalOptions>
-							<detectLinks>true</detectLinks>
 							<doclint>all,-missing</doclint>
 							<failOnError>false</failOnError>
+							<!-- When offline is true, links are ignored.    -->
+							<!-- For now, ignoring links suppresses warnings -->
+							<!-- about module names and version substitution -->
 							<offline>true</offline>
-							<links>
-								<link>https://javadoc.io/doc/jakarta.xml.bind/jakarta.xml.bind-api/${jaxb-api.version}/</link>
-								<link>https://javadoc.io/doc/org.glassfish.jaxb/codemodel/${jaxb-imp.version}/</link>
-								<link>https://javadoc.io/doc/org.glassfish.jaxb/jaxb-core/${jaxb-imp.version}/</link>
-								<link>https://javadoc.io/doc/org.glassfish.jaxb/jaxb-runtime/${jaxb-imp.version}/</link>
-								<link>https://javadoc.io/doc/org.glassfish.jaxb/jaxb-xjc/${jaxb-imp.version}/</link>
-								<!-- HiSrc BasicJAXB Annox links -->
-								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-annox-parser/latest</link>
-								<!-- HiSrc BasicJAXB links -->
-								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-ant/latest</link>
-								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-tools/latest</link>
-								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-plugins/latest</link>
-								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-runtime/latest</link>
-								<link>https://javadoc.io/doc/org.patrodyne.jvnet/hisrc-basicjaxb-testing/latest</link>
-							</links>
+							<!-- Detection of Javadoc links of dependent projects; but, this -->
+							<!-- only works if the dependent project follows ${project.url}/apidocs -->
+							<detectLinks>false</detectLinks>
+							<detectOfflineLinks>false</detectOfflineLinks>
 							<quiet>false</quiet>
 						</configuration>
 					</execution>
 				</executions>
 			</plugin>
+			<!--
+				Enforce environmental constraints and project rules to ensure build consistency
+				across different environments.
+				Project: Is the "hard" minimum for the project.
+				Plugins: Many Maven plugins have a "soft" minimum that is overriden by the above.
+			-->
 			<plugin>
 				<artifactId>maven-enforcer-plugin</artifactId>
 				<version>${maven-enforcer-plugin.version}</version>
