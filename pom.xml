@@ -81,7 +81,7 @@
 		<hibernate-search.version>8.2.2.Final</hibernate-search.version>
 		<hisrc-basicjaxb-annox-parser.version>3.0.0</hisrc-basicjaxb-annox-parser.version>
 		<hisrc-basicjaxb.version>3.0.0</hisrc-basicjaxb.version>
-		<hisrc-higherjaxb-maven-plugin.version>3.0.0-SNAPSHOT</hisrc-higherjaxb-maven-plugin.version>
+		<hisrc-higherjaxb-maven-plugin.version>3.0.0</hisrc-higherjaxb-maven-plugin.version>
 		<jaxb-api.version>4.0.5</jaxb-api.version>
 		<jaxb-imp.version>4.0.6</jaxb-imp.version>
 		<junit-jupiter.version>6.0.3</junit-jupiter.version>
