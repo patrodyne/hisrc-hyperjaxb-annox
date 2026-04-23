@@ -1,5 +1,6 @@
 package org.jvnet.hyperjaxb_annox.plugin.annotate;
 
+import org.jvnet.basicjaxb.util.CodeModelUtils;
 import org.jvnet.basicjaxb_annox.model.XAnnotation;
 import org.jvnet.basicjaxb_annox.model.annotation.field.XAnnotationField;
 import org.jvnet.basicjaxb_annox.model.annotation.value.XAnnotationValueVisitor;
@@ -18,7 +19,6 @@ import org.jvnet.basicjaxb_annox.model.annotation.value.XLongAnnotationValue;
 import org.jvnet.basicjaxb_annox.model.annotation.value.XShortAnnotationValue;
 import org.jvnet.basicjaxb_annox.model.annotation.value.XStringAnnotationValue;
 import org.jvnet.basicjaxb_annox.model.annotation.value.XXAnnotationAnnotationValue;
-import org.jvnet.basicjaxb.util.CodeModelUtils;
 
 import com.sun.codemodel.JAnnotationUse;
 import com.sun.codemodel.JClass;
@@ -27,137 +27,147 @@ import com.sun.codemodel.JExpressionImpl;
 import com.sun.codemodel.JFormatter;
 import com.sun.codemodel.JType;
 
-public class AnnotatingSingleValueVisitor implements
-		XAnnotationValueVisitor<JAnnotationUse> {
-
+public class AnnotatingSingleValueVisitor
+	implements XAnnotationValueVisitor<JAnnotationUse>
+{
 	private final JCodeModel codeModel;
 	private final String name;
 	private final JAnnotationUse annotationUse;
 
-	public AnnotatingSingleValueVisitor(JCodeModel codeModel, String name,
-			JAnnotationUse annotationUse) {
+	public AnnotatingSingleValueVisitor(JCodeModel codeModel, String name, JAnnotationUse annotationUse)
+	{
 		this.codeModel = codeModel;
 		this.name = name;
 		this.annotationUse = annotationUse;
 	}
 
-//	public JAnnotationUse visit(XAnnotationAnnotationValue<?> value) {
+//	public JAnnotationUse visit(XAnnotationAnnotationValue<?> value)
+//	{
 //		final XAnnotation<?> xannotation = value.getXAnnotation();
-//
-//		final JAnnotationUse annotationUse = this.annotationUse
-//				.annotationParam(this.name, xannotation.getAnnotationClass());
-//
-//		for (final XAnnotationField<?> field : xannotation.getFieldsList()) {
+//		final JAnnotationUse annotationUse = this.annotationUse.annotationParam(this.name,
+//			xannotation.getAnnotationClass());
+//		for ( final XAnnotationField<?> field : xannotation.getFieldsList() )
 //			field.accept(new AnnotatingVisitor(this.codeModel, annotationUse));
-//		}
 //		return annotationUse;
 //	}
 
 	@Override
-	public JAnnotationUse visit(XXAnnotationAnnotationValue<?> value) {
+	public JAnnotationUse visit(XXAnnotationAnnotationValue<?> value)
+	{
 		final XAnnotation<?> xannotation = value.getXAnnotation();
-
 		// TODO The call to getAnnotationClass is illegal here
-		final JAnnotationUse annotationUse = this.annotationUse
-				.annotationParam(this.name, xannotation.getAnnotationClass());
-
-		for (final XAnnotationField<?> field : xannotation.getFieldsList()) {
+		final JAnnotationUse annotationUse =
+			this.annotationUse.annotationParam(this.name, xannotation.getAnnotationClass());
+		for ( final XAnnotationField<?> field : xannotation.getFieldsList() )
 			field.accept(new AnnotatingVisitor(this.codeModel, annotationUse));
-		}
 		return annotationUse;
 	}
 
 	@Override
-	public JAnnotationUse visit(XBooleanAnnotationValue value) {
+	public JAnnotationUse visit(XBooleanAnnotationValue value)
+	{
 		return annotationUse.param(this.name, value.getValue());
 	}
 
 	@Override
-	public JAnnotationUse visit(XByteAnnotationValue value) {
+	public JAnnotationUse visit(XByteAnnotationValue value)
+	{
 		return annotationUse.param(this.name, value.getValue());
 	}
 
 	@Override
-	public JAnnotationUse visit(XCharAnnotationValue value) {
+	public JAnnotationUse visit(XCharAnnotationValue value)
+	{
 		return annotationUse.param(this.name, value.getValue());
 	}
 
 	@Override
-	public JAnnotationUse visit(XDoubleAnnotationValue value) {
+	public JAnnotationUse visit(XDoubleAnnotationValue value)
+	{
 		return annotationUse.param(this.name, value.getValue());
 	}
 
 	@Override
-	public JAnnotationUse visit(XFloatAnnotationValue value) {
+	public JAnnotationUse visit(XFloatAnnotationValue value)
+	{
 		return annotationUse.param(this.name, value.getValue());
 	}
 
 	@Override
-	public JAnnotationUse visit(XIntAnnotationValue value) {
+	public JAnnotationUse visit(XIntAnnotationValue value)
+	{
 		return annotationUse.param(this.name, value.getValue());
 	}
 
 	@Override
-	public JAnnotationUse visit(XLongAnnotationValue value) {
+	public JAnnotationUse visit(XLongAnnotationValue value)
+	{
 		return annotationUse.param(this.name, value.getValue());
 	}
 
 	@Override
-	public JAnnotationUse visit(XShortAnnotationValue value) {
+	public JAnnotationUse visit(XShortAnnotationValue value)
+	{
 		return annotationUse.param(this.name, value.getValue());
 	}
 
 	@Override
-	public JAnnotationUse visit(XStringAnnotationValue value) {
+	public JAnnotationUse visit(XStringAnnotationValue value)
+	{
 		return annotationUse.param(this.name, value.getValue());
 	}
 
 	@Override
-	public JAnnotationUse visit(XEnumAnnotationValue<?> value) {
+	public JAnnotationUse visit(XEnumAnnotationValue<?> value)
+	{
 		final Enum<?> e = value.getValue();
 		return annotationUse.param(this.name, e);
 	}
 
 	@Override
-	public JAnnotationUse visit(XEnumByNameAnnotationValue<?> value) {
-		final JClass type = (JClass) CodeModelUtils.ref(this.codeModel,
-				value.getEnumClassName());
+	public JAnnotationUse visit(XEnumByNameAnnotationValue<?> value)
+	{
+		final JClass type = (JClass) CodeModelUtils.ref(this.codeModel, value.getEnumClassName());
 		return annotationUse.param(this.name, type.staticRef(value.getName()));
 	}
 
 	@Override
-	public JAnnotationUse visit(XClassAnnotationValue<?> value) {
+	public JAnnotationUse visit(XClassAnnotationValue<?> value)
+	{
 		final JType type = this.codeModel._ref(value.getValue());
 		return param(type);
 	}
 
 	@Override
-	public JAnnotationUse visit(XClassByNameAnnotationValue<?> value) {
+	public JAnnotationUse visit(XClassByNameAnnotationValue<?> value)
+	{
 		JType type = CodeModelUtils.ref(this.codeModel, value.getClassName());
 		return param(type);
 	}
 
 	@Override
-	public JAnnotationUse visit(XArrayClassAnnotationValue<?, ?> value) {
-		JType type = CodeModelUtils.ref(this.codeModel,
-				value.getItemClassName());
-		for (int index = 0; index < value.getDimension(); index++) {
+	public JAnnotationUse visit(XArrayClassAnnotationValue<?, ?> value)
+	{
+		JType type = CodeModelUtils.ref(this.codeModel, value.getItemClassName());
+		for ( int index = 0; index < value.getDimension(); index++ )
 			type = type.array();
-		}
 		return param(type);
 	}
 
-	private JAnnotationUse param(final JType type) {
-		if (type instanceof JClass) {
-			return annotationUse.param(this.name, (JClass) type);
-		} else {
-			return annotationUse.param(this.name, new JExpressionImpl() {
+	private JAnnotationUse param(final JType type)
+	{
+		if ( type instanceof JClass )
+			return annotationUse.param(this.name, type);
+		else
+		{
+			return annotationUse.param(this.name, new JExpressionImpl()
+			{
 				@Override
-				public void generate(JFormatter f) {
+				public void generate(JFormatter f)
+				{
 					f.g(type).p(".class");
 				}
 			});
 		}
 	}
-
 }
