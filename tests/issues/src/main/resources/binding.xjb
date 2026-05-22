@@ -62,8 +62,15 @@
 			<annox:removeAnnotation target="enum-constant" class="jakarta.xml.bind.annotation.XmlEnumValue"/>
 		</jaxb:bindings>
 
+		<!--
+			The problem is that XJC attaches customization elements to both
+			the class and the property for mixed complex types.
+		-->
 		<jaxb:bindings node="xsd:complexType[@name='gh51Type']">
+			<!--
 			<annox:annotateClass>@jakarta.xml.bind.annotation.XmlType(name="gh51TypeNew")</annox:annotateClass>
+			-->
+			<annox:annotate target="class">@jakarta.xml.bind.annotation.XmlType(name="gh51TypeNew")</annox:annotate>
 		</jaxb:bindings>
 
 	</jaxb:bindings>

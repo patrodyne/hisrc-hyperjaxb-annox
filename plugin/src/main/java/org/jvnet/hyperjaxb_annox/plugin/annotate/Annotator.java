@@ -2,6 +2,7 @@ package org.jvnet.hyperjaxb_annox.plugin.annotate;
 
 import java.util.Collection;
 
+import org.jvnet.basicjaxb.util.ClassUtils;
 import org.jvnet.basicjaxb_annox.model.XAnnotation;
 import org.jvnet.basicjaxb_annox.model.XAnnotationFieldVisitor;
 import org.jvnet.basicjaxb_annox.model.annotation.field.XAnnotationField;
@@ -46,8 +47,8 @@ public class Annotator
 					JAnnotationValue aaNameValue = annotation.getAnnotationMembers().get("name");
 					if ( aaNameValue instanceof JAnnotationStringValue aaNameStringValue )
 					{
-						// When both sides are the same class but have different
-						// names; do not de-duplicate.
+						// When both sides are the same class but have different names;
+						// do not de-duplicate unless the annotation is not repeatable.
 						String xaNameString = (String) xaNameField.getValue();
 						// Both sides have a name field, check values for equality.
 						if ( xaNameString != null )
@@ -55,6 +56,14 @@ public class Annotator
 							String aaNameString = aaNameStringValue.toString();
 							if ( xaNameString.equals(aaNameString) )
 								annotationUse = annotation;
+							else
+							{
+								// Names are not the same but the annotation types
+								// are the same. If not repeatable, merge the annotation.
+								JClass jClass = annotation.getAnnotationClass();
+								if ( !ClassUtils.isClassRepeatable(jClass) )
+									annotationUse = annotation;
+							}
 						}
 					}
 					else

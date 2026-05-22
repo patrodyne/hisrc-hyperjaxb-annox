@@ -21,7 +21,12 @@ public class RunIssuesPluginTest extends AbstractMojoTest
 		basicjaxb.setGroupId("org.patrodyne.jvnet");
 		basicjaxb.setArtifactId("hisrc-basicjaxb-plugins");
 		basicjaxb.setVersion(DEFAULT_BASICJAXB_VERSION);
-		
+
+		final Dependency hyperjaxb_annox = new Dependency();
+		hyperjaxb_annox.setGroupId("org.patrodyne.jvnet");
+		hyperjaxb_annox.setArtifactId("hisrc-hyperjaxb-annox-plugin");
+		hyperjaxb_annox.setVersion(DEFAULT_BASICJAXB_VERSION);
+
 		//
 		// MOJO Execution
 		//
@@ -32,27 +37,27 @@ public class RunIssuesPluginTest extends AbstractMojoTest
 		mojo.getRemoteRepos().add(REMOTE_REPOSITORY);
 		mojo.setRepoSession(REPOSITORY_SYSTEM_SESSION);
 		mojo.setRepoSystem(repositorySystem);
-		
+
 		mojo.setProject(createMavenProject());
 		mojo.setSchemaDirectory(fullpath("src/main/resources"));
-		mojo.setGenerateDirectory(fullpath("target/generated-sources/xjc")); 
+		mojo.setGenerateDirectory(fullpath("target/generated-sources/xjc"));
 		mojo.setVerbose(true);
 		mojo.setDebug(true);
 		mojo.setWriteCode(true);
 		mojo.setForceRegenerate(true);
 		mojo.setNoFileHeader(true);
 		mojo.setExtension(true);
-		
+
 		mojo.setArgs(new ArrayList<>());
+		mojo.getArgs().add("-XremoveAnnotation");
+		mojo.getArgs().add("-Xannotate");
 		mojo.getArgs().add("-Xcustomizations");
 		mojo.getArgs().add("-Xcustomizations-directory=src/main/resources");
 		mojo.getArgs().add("-Xcustomizations-verbose=true");
 		mojo.getArgs().add("-Xcustomizations-debug=true");
-		mojo.getArgs().add("-Xannotate");
-		mojo.getArgs().add("-XremoveAnnotation");
-		
-		mojo.setPlugins(new Dependency[] { basicjaxb });
-		
+
+		mojo.setPlugins(new Dependency[] { basicjaxb, hyperjaxb_annox });
+
 		mojo.execute();
 	}
 }
