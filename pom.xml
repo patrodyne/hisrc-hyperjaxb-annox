@@ -76,24 +76,25 @@
 
 		<activation-api.version>2.1.4</activation-api.version>
 		<activation-imp.version>2.0.3</activation-imp.version>
-		<ant.version>1.10.15</ant.version>
+		<ant.version>1.10.17</ant.version>
+		<commons-io.version>2.22.0</commons-io.version>
 		<guice.version>5.1.0</guice.version> <!-- provided by Maven -->
-		<hibernate-search.version>8.3.0.Final</hibernate-search.version>
+		<hibernate-search.version>8.4.0.Final</hibernate-search.version>
 		<hisrc-basicjaxb-annox-parser.version>3.0.1-SNAPSHOT</hisrc-basicjaxb-annox-parser.version>
 		<hisrc-basicjaxb.version>3.0.1-SNAPSHOT</hisrc-basicjaxb.version>
 		<hisrc-higherjaxb-maven-plugin.version>3.0.1-SNAPSHOT</hisrc-higherjaxb-maven-plugin.version>
 		<jaxb-api.version>4.0.5</jaxb-api.version>
-		<jaxb-imp.version>4.0.7</jaxb-imp.version>
-		<junit-jupiter.version>6.0.3</junit-jupiter.version>
-		<junit-platform.version>6.0.3</junit-platform.version>
+		<jaxb-imp.version>4.0.9</jaxb-imp.version>
+		<junit-jupiter.version>6.1.0</junit-jupiter.version>
+		<junit-platform.version>6.1.0</junit-platform.version>
 		<maven.compiler.release>17</maven.compiler.release>
 		<maven-api.version>3.9.14</maven-api.version>
 		<maven-min.version>3.9.0</maven-min.version>
-		<maven-resolver.version>2.0.16</maven-resolver.version>
+		<maven-resolver.version>1.9.17</maven-resolver.version>
 		<maven-resolver-http.version>1.9.27</maven-resolver-http.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<slf4j.version>2.0.17</slf4j.version>
+		<slf4j.version>2.0.18</slf4j.version>
 		<threeten-jaxb.version>2.2.0</threeten-jaxb.version>
 
 		<root.basedir>${basedir}</root.basedir>
@@ -222,7 +223,7 @@
 			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
-				<version>2.21.0</version>
+				<version>${commons-io.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>commons-beanutils</groupId>
